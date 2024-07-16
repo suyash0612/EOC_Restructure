@@ -1,0 +1,84 @@
+{
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+    "description": "Service order for WS Partner Onboarding",
+    "relatedParty": [
+      {
+        "id": "DynamicVariable.relatedParty.customerid",
+        "role": "Customer",
+        "name": "WS Partner 1",
+        "ispId": "ABC",
+        "segment": "wholesale"
+      },
+      {
+        "id": "DynamicVariable.relatedParty.requestorid",
+        "role": "Requester",
+        "name": "DynamicVariable.relatedParty.requestorid"
+      }
+    ],
+    "serviceOrderItem": [
+        {
+            "id": "4",
+            "action": "Add",
+            "service": {
+                "serviceCharacteristic": [
+                    {
+                      "name": "qualityClass",
+                      "valueType": "String",
+                      "value": "Standard"
+                    },
+                    {
+                      "name": "ipEncapsulationType",
+                      "valueType": "String",
+                      "value": "DynamicVariable.ipEncapsulationType.value"
+                    },
+                    {
+                      "name": "endUserAccessVlan",
+                      "valueType": "String",
+                      "value": "DynamicVariable.endUserAccessVlan"
+                    }
+                  ],
+                "serviceSpecification": {
+                    "name": "CFS_P2MP_ETH"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "action": "Add",
+            "serviceOrderItemRelationship": [
+                {
+                    "relationshipType": "ReliesOn",
+                    "orderItem": {
+                        "itemId": "4"
+                    }
+                }
+            ],
+            "service": {
+                "serviceRelationship": [
+                    {
+                        "relationshipType": "reliesOn",
+                        "service": {
+                            "id": "DynamicVariable.CFS_ACCESS.service.id"
+                        }
+                    }
+                ],
+                "serviceSpecification": {
+                    "name": "CFS_P2MP_ETH_SAC_IC"
+                },
+                "serviceCharacteristic": [
+                    {
+                        "name": "interconnectVlan",
+                        "valueType": "String",
+                        "value": "DynamicVariable.interconnectVlan"
+                    },
+                    {
+                        "name": "region",
+                        "valueType": "String",
+                        "value": "national"
+                    }
+                ]
+            }
+        }
+    ]
+}

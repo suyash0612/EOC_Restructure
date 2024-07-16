@@ -1,0 +1,205 @@
+{
+    "externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+    "ponrPassed": false,
+    "serviceOrderItem": [
+      {
+        "id": "P2MP Ethernet-57c0f42e-6792-4e21-8089-f7d5a0d0c996-add",
+        "action": "add",
+        "quantity": 1,
+        "ponrPassed": false,
+        "service": {
+          "state": "Active",
+          "serviceCharacteristic": [
+            {
+                "name": "qualityClass",
+                "valueType": "String",
+                "value": "Standard"
+              },
+              {
+                "name": "ipEncapsulationType",
+                "valueType": "String",
+                "value": "DynamicVariable.ipEncapsulationType.value"
+              },
+              {
+                "name": "endUserAccessVlan",
+                "valueType": "String",
+                "value": "DynamicVariable.endUserAccessVlan"
+              }
+          ],
+          "serviceSpecification": {
+            "id": "CFS_P2MP_ETH",
+            "name": "CFS_P2MP_ETH",
+            "version": "1.0"
+          }
+        }
+      },
+      {
+        "id": "Interconnect Access-de4ea080-3970-4575-8c86-7a175ad3375a-add",
+        "action": "add",
+        "quantity": 1,
+        "ponrPassed": false,
+        "service": {
+          "state": "Active",
+          "serviceCharacteristic": [
+            {
+                "name": "bandwidthUp",
+                "valueType": "Number",
+                "value": "DynamicVariable.bandwidthUp.value"
+              },
+              {
+                "name": "bandwidthDown",
+                "valueType": "Number",
+                "value": "DynamicVariable.bandwidthDown.value"
+              },
+              {
+                "name": "technology",
+                "valueType": "String",
+                "value": "DynamicVariable.technology.value"
+              }
+          ],
+          "serviceSpecification": {
+            "id": "CFS_ACCESS",
+            "name": "CFS_ACCESS",
+            "version": "1.0"
+          },
+          "place": [
+            {
+              "id": "L.35596",
+              "role": "NetworkLocation"
+            }
+          ]
+        }
+      },
+      {
+        "id": "P2MP Ethernet Interconnect Access Configuration-67021bd2-f2de-4c27-ad6c-7bec2cfe6a61-add",
+        "action": "add",
+        "quantity": 1,
+        "ponrPassed": false,
+        "service": {
+          "state": "Active",
+          "serviceCharacteristic": [
+              {
+                "name": "interconnectVlan",
+                "valueType": "String",
+                "value": "DynamicVariable.interconnectVlan"
+              },
+              {
+                "name": "region",
+                "valueType": "String",
+                "value": "national"
+              }
+          ],
+          "serviceSpecification": {
+            "id": "CFS_P2MP_ETH_SAC_IC",
+            "name": "CFS_P2MP_ETH_SAC_IC",
+            "version": "1.0"
+          }
+        },
+        "serviceOrderItemRelationship": [
+          {
+            "relationshipType": "reliesOn",
+            "orderItem": {
+              "itemId": "P2MP Ethernet-57c0f42e-6792-4e21-8089-f7d5a0d0c996-add"
+            }
+          },
+          {
+            "relationshipType": "reliesOn",
+            "orderItem": {
+              "itemId": "Interconnect Access-de4ea080-3970-4575-8c86-7a175ad3375a-add"
+            }
+          }
+        ]
+      },
+      {
+        "id": "P2MP Ethernet-168286c5-b0fb-4c3a-b38a-a954c7b26ea3-add",
+        "action": "add",
+        "quantity": 1,
+        "ponrPassed": false,
+        "service": {
+          "state": "Active",
+          "serviceCharacteristic": [
+            {
+                "name": "qualityClass",
+                "valueType": "String",
+                "value": "Standard"
+              },
+              {
+                "name": "ipEncapsulationType",
+                "valueType": "String",
+                "value": "DynamicVariable.ipEncapsulationType2.value"
+              },
+              {
+                "name": "endUserAccessVlan",
+                "valueType": "String",
+                "value": "DynamicVariable.endUserAccessVlan2"
+              }
+          ],
+          "serviceSpecification": {
+            "id": "CFS_P2MP_ETH",
+            "name": "CFS_P2MP_ETH",
+            "version": "1.0"
+          }
+        }
+      },
+      {
+        "id": "P2MP Ethernet Interconnect Access Configuration-adfd9045-7574-4c8d-9e07-c614a72aae5f-add",
+        "action": "add",
+        "quantity": 1,
+        "ponrPassed": false,
+        "service": {
+          "state": "Active",
+          "serviceCharacteristic": [
+              {
+                "name": "interconnectVlan",
+                "valueType": "String",
+                "value": "DynamicVariable.interconnectVlan2"
+              },
+              {
+                "name": "region",
+                "valueType": "String",
+                "value": "national"
+              }
+          ],
+          "serviceSpecification": {
+            "id": "CFS_P2MP_ETH_SAC_IC",
+            "name": "CFS_P2MP_ETH_SAC_IC",
+            "version": "1.0"
+          }
+        },
+        "serviceOrderItemRelationship": [
+          {
+            "relationshipType": "reliesOn",
+            "orderItem": {
+              "itemId": "P2MP Ethernet-168286c5-b0fb-4c3a-b38a-a954c7b26ea3-add"
+            }
+          },
+          {
+            "relationshipType": "reliesOn",
+            "orderItem": {
+              "itemId": "Interconnect Access-de4ea080-3970-4575-8c86-7a175ad3375a-add"
+            }
+          }
+        ]
+      }
+    ],
+    "relatedParty": [
+      {
+        "id": "DynamicVariable.relatedParty.customerid",
+        "href": "https://public-gateway-staging-bss-netcracker.aws-eks01.nccloud-s.aws-tmnl.local/cim-tmf-service/customerManagement/customer/0013G00000Rp2jnQAB",
+        "name": "Ori Whole Sale and retail B.V.",
+        "role": "Customer",
+        "businessSegment": "WHS",
+        "ispId": "GAP",
+        "@referredType": "Customer"
+      },
+      {
+        "id": "DynamicVariable.relatedParty.requestorid",
+        "name": "DynamicVariable.relatedParty.requestorid",
+        "role": "Requester"
+      }
+    ],
+    "catalogVersion": "release_2301",
+    "priority": "2",
+    "companyName": "Ori Whole Sale and retail B.V.",
+    "requestId": "DynamicVariable.RequestID"
+  }

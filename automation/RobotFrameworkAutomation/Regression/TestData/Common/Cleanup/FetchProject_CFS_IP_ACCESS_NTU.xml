@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:com:ericsson:schema:xml:granite:sdk:common:data-types:1:0" xmlns:urn1="urn:com:ericsson:schema:wsdl:oss:core:project-management:ws:ProjectService:command">
+   <soapenv:Body>
+      <urn1:fetchByKey>
+         <projectKey>
+            <keyValue>260653</keyValue>
+         </projectKey>
+      </urn1:fetchByKey>
+   </soapenv:Body>
+</soapenv:Envelope>

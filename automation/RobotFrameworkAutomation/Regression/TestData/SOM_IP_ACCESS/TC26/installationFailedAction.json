@@ -1,0 +1,9 @@
+{
+	"actionName":"installationFailed",
+	"data":{
+		"reasonCode":"1506",
+		"reasonDescription":"Customer not present",
+		"domain":"EOC",
+		"note":""
+	}
+}

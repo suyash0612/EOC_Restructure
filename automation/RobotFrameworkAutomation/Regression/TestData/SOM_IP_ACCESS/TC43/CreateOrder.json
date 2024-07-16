@@ -1,0 +1,181 @@
+{
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+    "category": "Migrate-In",
+    "description": "Service order for IP Access - Migrate In",
+    "relatedParty": [
+        {
+            "id": "CustomerTC43",
+            "role": "Customer",
+            "name": "IP Access Robot Framework TC43"
+        },
+        {
+            "id": "BSS-Simulator",
+            "role": "Requester",
+            "name": "BSS Simulator Integration Environment"
+        }
+    ],
+    "orderItem": [
+        {
+            "id": "1",
+            "action": "Add",
+            "service": {
+                "serviceCharacteristic": [
+                    {
+                        "name": "sla",
+                        "valueType": "String",
+                        "value": "Standard"
+                    },
+                    {
+                        "name": "installationType",
+                        "valueType": "String",
+                        "value": "Engineer"
+                    },
+                    {
+                        "name": "minimumBandwidthDown",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.minimumBandwidthDown"
+                    },
+                    {
+                        "name": "minimumBandwidthUp",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.minimumBandwidthUp"
+                    },
+                    {
+                        "name": "promisedBandwidthDown",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.promisedBandwidthDown"
+                    },
+                    {
+                        "name": "promisedBandwidthUp",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.promisedBandwidthUp"
+                    },
+                    {
+                        "name": "serviceBandwidthDown",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.serviceBandwidthDown"
+                    },
+                    {
+                        "name": "serviceBandwidthUp",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.serviceBandwidthUp"
+                    }
+                ],
+                "relatedParty": [
+                    {
+                        "@type": "ContactParty",
+                        "role": "SiteContact",
+                        "id": "1234567907",
+                        "firstName": "RobotFrameworkTC43",
+                        "lastName": "Automation",
+                        "phoneNumber": "0201201201",
+                        "alternatePhoneNumber": "0201201202",
+                        "mobileNumber": "0611459399",
+                        "email": "RobotFrameworkTC43@tele2.com"
+                    }
+                ],
+                "place": [
+                    {
+                        "@type": "GeographicAddress",
+                        "role": "InstallationAddress",
+                        "id": "DynamicVariable.PostCode-DynamicVariable.HouseNumber",
+                        "street": "Jan van Galenstraat",
+                        "houseNumber": "DynamicVariable.HouseNumber",
+                        "houseNumberExtension": "",
+                        "postcode": "DynamicVariable.PostCode",
+                        "city": "Haarlem",
+                        "country": "Netherlands"
+                    },
+                    {
+                        "@type": "",
+                        "role": "ConnectionPoint",
+                        "id": "DynamicVariable.PostCode-DynamicVariable.HouseNumber:nvt",
+                        "street": "Jan van Galenstraat",
+                        "houseNumber": "DynamicVariable.HouseNumber",
+                        "houseNumberExtension": "",
+                        "postcode": "DynamicVariable.PostCode",
+                        "city": "Haarlem",
+                        "country": "Netherlands",
+                        "connectionPointIdentifier": "nvt",
+                        "accessServiceId": "REF7400483701",
+                        "nlType": ""
+                    }
+                ],
+                "serviceSpecification": {
+                    "name": "CFS_IP_ACCESS_WBA_FTTH"
+                }
+            }
+        },
+        {
+            "id": "2",
+            "action": "Add",
+            "service": {
+                "serviceCharacteristic": [],
+                "serviceSpecification": {
+                    "name": "CFS_INTERNET"
+                }
+            },
+            "orderItemRelationship": [
+                {
+                    "type": "ReliesOn",
+                    "id": "1"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "action": "Add",
+            "service": {
+                "serviceCharacteristic": [
+                    {
+                        "name": "model",
+                        "valueType": "String",
+                        "value": "DynamicVariable.model_CGW"
+                    },
+                    {
+                        "name": "vendor",
+                        "valueType": "String",
+                        "value": "DynamicVariable.vendor_CGW"
+                    }
+                ],
+                "serviceSpecification": {
+                    "name": "CFS_IP_ACCESS_CGW"
+                }
+            },
+            "orderItemRelationship": [
+                {
+                    "type": "ReliesOn",
+                    "id": "1"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "action": "Add",
+            "service": {
+                "serviceCharacteristic": [
+                    {
+                        "name": "model",
+                        "valueType": "String",
+                        "value": "DynamicVariable.model_NTU"
+                    },
+                    {
+                        "name": "vendor",
+                        "valueType": "String",
+                        "value": "DynamicVariable.vendor_NTU"
+                    }
+                ],
+                "serviceSpecification": {
+                    "name": "CFS_IP_ACCESS_NTU"
+                }
+            },
+            "orderItemRelationship": [
+                {
+                    "type": "ReliesOn",
+                    "id": "1"
+                }
+            ]
+        }
+    ]
+}

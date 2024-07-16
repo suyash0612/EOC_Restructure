@@ -1,0 +1,26 @@
+{
+	"requestId": "DynamicVariable.RequestID",
+	"externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+	"description": "Delete Mobile Back-up order for IP Access GOP",
+	"relatedParty": [
+		{
+			"id": "CustomerTC08AODF",
+			"role": "Customer",
+			"name": "IP Access Robot Framework TC08AODF"
+		},
+		{
+			"id": "BSS-Simulator",
+			"role": "Requester",
+			"name": "BSS Simulator"
+		}
+	],
+	"orderItem": [
+        {
+			"id": "5",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdMobileBackup"
+			}
+		}
+	]
+}

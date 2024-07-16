@@ -1,0 +1,60 @@
+<bsachangelinesa>
+	<messageheader>
+		<originator>BUBN</originator>
+		<recipient>VTEL</recipient>
+		<messagetype>CHANGE_LINE_SA</messagetype>
+		<messageversion>52</messageversion>
+		<timestamp>20200113171141</timestamp>
+	</messageheader>
+	<messagebody>
+		<generalinfo>
+			<order-id>P2001131710372981</order-id>
+			<order-id-wso>DynamicVariable.wsoId</order-id-wso>
+			<custwishdate>20200113</custwishdate>
+			<orderreceivedatetime>20200113171020</orderreceivedatetime>
+		</generalinfo>
+		<actualuserinfo>
+			<service-group>SG-20003513</service-group>
+		</actualuserinfo>
+		<orderinfo>
+			<order-type>Change Access</order-type>
+			<line-test-and-label>false</line-test-and-label>
+			<outlet-required>false</outlet-required>
+		</orderinfo>
+		<planninginfo>
+			<planned-tcd>20201213</planned-tcd>
+			<planned-ocd>20201213</planned-ocd>
+		</planninginfo>
+		<accesselements>
+			<access-instance-id>AI-20003575/1</access-instance-id>
+			<new-access-instance-id>AI-20003575/1</new-access-instance-id>
+			<xdf-access-serviceid>PL1REF7836660574</xdf-access-serviceid>
+			<portfolio-id>W-ADSL-WD</portfolio-id>
+			<carrier-type>Fiber</carrier-type>
+			<technology-type>GoF</technology-type>
+			<access-class>E2E</access-class>
+			<quality-class>INP 0</quality-class>
+		</accesselements>
+		<servicelevelelements>
+			<sla-name>Office hours</sla-name>
+		</servicelevelelements>
+		<serviceinfo>
+			<serviceelement>
+				<service-instance-id>SI-20007320</service-instance-id>
+				<service-type-id>7420</service-type-id>
+				<service-class>E2E</service-class>
+				<e2einfo>
+					<transport-instance-id>TI-VTEL/4</transport-instance-id>
+					<eap-vlan-id>32</eap-vlan-id>
+					<wap-area>WA-VTEL/97</wap-area>
+					<wap-vlan-id>2521</wap-vlan-id>
+					<customer-connection-tag>DynamicVariable.serviceCustomerConnectionTag</customer-connection-tag>
+				</e2einfo>
+			</serviceelement>
+		</serviceinfo>
+		<errorinfo>
+			<errorcode>750</errorcode>
+			<comment>9341</comment>
+		</errorinfo>
+	</messagebody>
+</bsachangelinesa>

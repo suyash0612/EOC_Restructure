@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:com:ericsson:schema:xml:granite:sdk:common:data-types:1:0" xmlns:urn1="urn:com:ericsson:schema:wsdl:oss:core:nd:ws:ProvisioningRequestService:command">
+   <soapenv:Body>
+      <urn1:fetchByKey>
+         <provisioningRequestKey>
+            <keyValue>381198</keyValue>
+         </provisioningRequestKey>
+         <provisioningRequestFetchSpec>
+            <mode>ATTRIBUTES</mode>
+         </provisioningRequestFetchSpec>
+      </urn1:fetchByKey>
+   </soapenv:Body>
+</soapenv:Envelope>

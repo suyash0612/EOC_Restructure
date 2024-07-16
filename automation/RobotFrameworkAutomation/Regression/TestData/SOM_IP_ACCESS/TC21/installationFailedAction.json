@@ -1,0 +1,9 @@
+{
+	"actionName":"installationFailed",
+	"data":{
+		"reasonCode":"1501",
+		"reasonDescription":"No power supply",
+		"domain":"EOC",
+		"note":""
+	}
+}

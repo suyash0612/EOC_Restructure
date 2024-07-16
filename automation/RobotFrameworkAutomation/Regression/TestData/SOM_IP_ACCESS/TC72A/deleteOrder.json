@@ -1,0 +1,26 @@
+{
+	"requestId": "DynamicVariable.RequestID",
+	"externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+	"description": "Delete Mobile Back-up order for IP Access VDSL",
+	"relatedParty": [
+		{
+			"id": "CustomerTC72A",
+			"role": "Customer",
+			"name": "IP Access Robot Framework TC72A"
+		},
+		{
+			"id": "BSS-Simulator",
+			"role": "Requester",
+			"name": "BSS Simulator"
+		}
+	],
+	"orderItem": [
+        {
+			"id": "5",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdMobileBackup"
+			}
+		}
+	]
+}

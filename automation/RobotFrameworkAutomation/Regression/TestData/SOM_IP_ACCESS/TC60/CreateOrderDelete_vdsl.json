@@ -1,0 +1,47 @@
+{
+	"requestId": "DynamicVariable.RequestID",
+	"externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+	"description": "Delete Service order for IP Access VDSL",
+	"relatedParty": [
+		{
+			"id": "CustomerTC01",
+			"role": "Customer",
+			"name": "IP Access Robot Framework TC01"
+		},
+		{
+			"id": "BSS-Simulator",
+			"role": "Requester",
+			"name": "BSS Simulator"
+		}
+	],
+	"orderItem": [
+		{
+			"id": "1",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdInternet"
+			}
+		},
+		{
+			"id": "2",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdVDSL"
+			}
+		},
+		{
+			"id": "3",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdNTU"
+			}
+		},
+		{
+			"id": "4",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdCGW"
+			}
+		}
+	]
+}

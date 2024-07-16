@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bsareviseconf xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <messageheader>
+    <originator>VTEL</originator>
+    <recipient>BUBN</recipient>
+    <messagetype>REVISE_CONF</messagetype>
+    <messageversion>10</messageversion>
+    <timestamp>97984741461299</timestamp>
+  </messageheader>
+  <messagebody>
+    <generalinfo>
+      <order-id>DynamicVariable.wsoId</order-id>
+      <order-id-wso>DynamicVariable.wsoId</order-id-wso>
+      <original-wso-wo-id>DynamicVariable.originalWsoId</original-wso-wo-id>
+      <orderreceivedatetime>48139232677817</orderreceivedatetime>
+      <reply-tag></reply-tag>
+    </generalinfo>
+    <planninginfo>
+      <custwishdate>DynamicVariable.replanDate</custwishdate>
+    </planninginfo>
+    <orderinfo>
+      <order-type>Revise</order-type>
+      <order-variant></order-variant>
+    </orderinfo>
+    <errorinfo>
+      <errorcode>0</errorcode>
+      <comment></comment>
+      <order-note></order-note>
+    </errorinfo>
+  </messagebody>
+</bsareviseconf>

@@ -1,0 +1,28 @@
+{
+   "description": "Service Feasibility Check",
+   "externalId":"FB100",
+   "serviceQualificationItem": [
+      {
+        "id": "1",
+        "service"   :{
+            "serviceSpecification":{
+               "name":"CFS_IP_ACCESS"
+            },
+             	"serviceCharacteristic": [{
+				"name": "fetchConnectionPointInfo",
+				"valueType": "Boolean",
+				"value": "DynamicVariable.FetchConnectionPointInfo"
+			}],
+           "place": [
+               {
+                  "role": "installationAddress",
+                  "referredType": "GeographicAddress",
+                  "postcode":"DynamicVariable.PostCode",
+                  "houseNumber":"DynamicVariable.HouseNumber", 
+                  "houseNumberExtension":"DynamicVariable.HousenumberExtension"
+               }
+            ]
+         }
+      }
+   ]
+}

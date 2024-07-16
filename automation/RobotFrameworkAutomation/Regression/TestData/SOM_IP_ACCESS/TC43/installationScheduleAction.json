@@ -1,0 +1,9 @@
+{
+	"actionName":"notify",
+	"id":"DynamicVariable.TaskId",
+	"data":{
+		"slotId":"SLOT1",
+		"installationStartDate":"DynamicVariable.currentDateT06:30:00.000Z",
+		"installationEndDate":"DynamicVariable.currentDateT10:00:00.000Z"
+	}
+}

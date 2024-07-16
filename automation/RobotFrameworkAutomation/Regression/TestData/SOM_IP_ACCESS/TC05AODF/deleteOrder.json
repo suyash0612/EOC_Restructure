@@ -1,0 +1,47 @@
+{
+	"requestId": "DynamicVariable.RequestID",
+	"externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+	"description": "Delete Service order for IP Access GoP FTTH VWT",
+	"relatedParty": [
+		{
+			"id": "CustomerTC02",
+			"role": "Customer",
+			"name": "IP Access Robot Framework TC02"
+		},
+		{
+			"id": "BSS-Simulator",
+			"role": "Requester",
+			"name": "BSS Simulator"
+		}
+	],
+	"serviceOrderItem": [
+		{
+			"id": "1",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdInternet"
+			}
+		},
+		{
+			"id": "2",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdFTTH"
+			}
+		},
+		{
+			"id": "3",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdCGW"
+			}
+		},
+		{
+			"id": "3",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdPIN"
+			}
+		}
+	]
+}

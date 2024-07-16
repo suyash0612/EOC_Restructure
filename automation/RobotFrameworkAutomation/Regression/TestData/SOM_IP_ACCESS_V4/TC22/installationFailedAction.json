@@ -1,0 +1,9 @@
+{
+	"actionName":"installationFailed",
+	"data":{
+		"reasonCode":"1502",
+		"reasonDescription":"No in-house cabling",
+		"domain":"EOC",
+		"note":""
+	}
+}

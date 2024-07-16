@@ -1,0 +1,33 @@
+{
+  "id": "110000002005000",
+  "externalId": "110000002005000",
+  "orderItem": [
+    {
+      "id": "DynamicVariable.cfsId",
+      "action": "delete",
+      "resource": {
+        "id": "DynamicVariable.cfsId",
+        "name": "Dhcp/1/Reservation",
+        "characteristic": [
+          {
+            "name": "ned",
+            "value": "DynamicVariable.ned"
+          },
+          {
+            "name": "nei",
+            "value": "DynamicVariable.nei"
+          },{
+            "name": "relay_agent_information",
+            "value": "DynamicVariable.relay_agent_information"
+          },{
+            "name": "ip_address",
+            "value": "DynamicVariable.ip_address"
+          }, {
+            "name": "ip_prefix_length",
+            "value": "DynamicVariable.ip_prefix_length"
+          }
+        ]
+      }
+    }
+   ]
+}

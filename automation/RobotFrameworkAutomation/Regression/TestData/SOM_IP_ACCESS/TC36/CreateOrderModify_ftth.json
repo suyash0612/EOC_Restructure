@@ -1,0 +1,58 @@
+{
+	"requestId": "DynamicVariable.RequestID",
+	"externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+	"description": "Modify Bandwidth for IP Access",
+	"relatedParty": [
+		{
+			"id": "CustomerTC02",
+			"role": "Customer",
+			"name": "IP Access Robot Framework TC02"
+		},
+		{
+			"id": "BSS-Simulator",
+			"role": "Requester",
+			"name": "BSS Netcracker Integration Environment"
+		}
+	],
+	"orderItem": [
+		{
+			"id": "1",
+			"action": "Modify",
+			"service": {
+				"id": "DynamicVariable.srIdFTTH",
+				"serviceCharacteristic": [
+					{
+						"name": "promisedBandwidthDown",
+						"valueType": "Number",
+						"value": "DynamicVariable.promisedBandwidthDown"
+					},
+					{
+						"name": "promisedBandwidthUp",
+						"valueType": "Number",
+						"value": "DynamicVariable.promisedBandwidthUp"
+					},
+					{
+						"name": "serviceBandwidthDown",
+						"valueType": "Number",
+						"value": "DynamicVariable.serviceBandwidthDown"
+					},
+					{
+						"name": "serviceBandwidthUp",
+						"valueType": "Number",
+						"value": "DynamicVariable.serviceBandwidthUp"
+					},
+					{
+						"name": "minimumBandwidthDown",
+						"valueType": "Number",
+						"value": "DynamicVariable.minimumBandwidthDown"
+					},
+					{
+						"name": "minimumBandwidthUp",
+						"valueType": "Number",
+						"value": "DynamicVariable.minimumBandwidthUp"
+					}
+				]
+			}
+		}
+	]
+}

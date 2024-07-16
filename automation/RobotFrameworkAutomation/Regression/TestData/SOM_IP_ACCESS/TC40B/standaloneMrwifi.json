@@ -1,0 +1,93 @@
+{
+    "requestId": "46699133523763304696262443235032hh7mm55vv55",
+    "externalId": "40372993",
+    "description": "Service order for IP Access",
+    "relatedParty": [
+      {
+        "id": "C_19052022112501",
+        "role": "Customer",
+        "name": "Wesley B V"
+      },
+      {
+        "role": "Requester",
+        "id": "BSS-Simulator",
+        "name": "BSS Netcracker"
+      }
+    ],
+    "orderItem": [
+      {
+        "id": "5",
+        "action": "Add",
+        "service": {
+          "serviceRelationship": {
+            "id": "814294997",
+            "type": "ReliesOn"
+          },
+          "serviceCharacteristic": [
+            {
+              "name": "installationType",
+              "valueType": "String",
+              "value": "Engineer"
+            },
+            {
+              "name": "numberOfPods",
+              "valueType": "Number",
+              "value": "5"
+            }
+          ],
+           "relatedParty": [
+            {
+              "@type": "ContactParty",
+              "role": "SiteContact",
+              "id": "C_1623048152499",
+              "firstName": "Prasobh",
+              "lastName": "Nair",
+              "phoneNumber": "0611611611",
+              "alternatePhoneNumber": "0611611612",
+              "mobileNumber": "3197023142986",
+              "email": "tests@t-mobile.nl"
+            }
+          ],
+          "place": [
+            {
+              "@type": "GeographicAddress",
+              "role": "InstallationAddress",
+              "id": "7941 XT-30",
+              "street": "Jan van Galenstraat",
+              "houseNumber": "30",
+              "houseNumberExtension": "",
+              "postcode": "7941 XT",
+              "city": "Haarlem",
+              "country": "Netherlands"
+            }
+          ],
+          "serviceSpecification": {
+            "name": "CFS_MULTI_ROOM_WIFI_LOCATION"
+          }
+        },
+        "orderItemRelationship": [
+          {
+            "type": "ReliesOn",
+            "id": "6"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "action": "Add",
+        "service": {
+          "serviceCharacteristic": [
+            {
+              "name": "name",
+              "valueType": "String",
+              "value": "UserName"
+            }
+          ],
+          "serviceSpecification": {
+            "name": "CFS_MULTI_ROOM_WIFI_CUSTOMER"
+          }
+        }
+      }
+    ]
+  }
+  

@@ -1,0 +1,9 @@
+{
+	"actionName":"installationFailed",
+	"data":{
+		"reasonCode":"1507",
+		"reasonDescription":"Customer refuses installation",
+		"domain":"EOC",
+		"note":""
+	}
+}

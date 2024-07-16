@@ -1,0 +1,223 @@
+{ 
+    "eventType": "ServiceOrderStateChangeNotification",
+    "eventId": 2404,
+    "eventDescription": "Order pending",
+    "eventTime": "2022-10-03T16:08:26.000Z",
+    "event": {
+      "serviceOrder": {
+        "requestId": "1664290022235",
+        "externalId": "DynamicVariable.orderId",
+        "description": "Service order for IP Access",
+        "category": "Install New",
+        "requestedStartDate": "2022-10-03T13:54:08.617Z",
+        "requestedCompletionDate": "2022-10-08T13:54:08.617Z",
+        "relatedParty": [
+          {
+            "id": "C_1664289985003",
+            "role": "Customer"
+          }
+        ],
+        "serviceOrderItem": [
+          {
+            "id": "915679078",
+            "action": "Add",
+            "service": {
+              "id": "915679371",
+              "serviceSpecification": {
+                "name": "CFS_IP_ACCESS_WBA_FTTH",
+                "baseType": "ServiceSpecification"
+              },
+              "serviceCharacteristic": [
+                {
+                  "name": "installationType",
+                  "value": "Engineer"
+                },
+                {
+                  "name": "activeOperator",
+                  "value": "KPN-WBA"
+                },
+                {
+                  "name": "eaiServiceType",
+                  "value": "ipaccess:IPAccessService"
+                },
+                {
+                  "name": "localAccessType",
+                  "value": "WBA_FTTH"
+                },
+                {
+                  "name": "sla",
+                  "value": "Standard"
+                },
+                {
+                  "name": "actualLineDeliveryDate",
+                  "value": "2022-10-10T21:59:59.000Z"
+                },
+                {
+                  "name": "bandwidthTooLow",
+                  "value": "false"
+                },
+                {
+                  "name": "minimumBandwidthDown",
+                  "value": "500000"
+                },
+                {
+                  "name": "minimumBandwidthUp",
+                  "value": "500000"
+                },
+                {
+                  "name": "plannedLineDeliveryDate",
+                  "value": "2022-10-10T21:59:59.000Z"
+                },
+                {
+                  "name": "promisedBandwidthDown",
+                  "value": "500000"
+                },
+                {
+                  "name": "promisedBandwidthUp",
+                  "value": "500000"
+                },
+                {
+                  "name": "serviceBandwidthDown",
+                  "value": "500000"
+                },
+                {
+                  "name": "serviceBandwidthUp",
+                  "value": "500000"
+                }
+              ],
+              "place": [
+                {
+                  "id": "6721 SJ-62",
+                  "role": "InstallationAddress",
+                  "houseNumber": "62",
+                  "street": "Jan van Galenstraat",
+                  "city": "Haarlem",
+                  "postcode": "6721 SJ",
+                  "country": "Netherlands"
+                },
+                {
+                  "id": "6721 SJ-62:nvt",
+                  "role": "ConnectionPoint",
+                  "houseNumber": "62",
+                  "street": "Jan van Galenstraat",
+                  "city": "Haarlem",
+                  "postcode": "6721 SJ",
+                  "connectionPointIdentifier": "nvt",
+                  "country": "Netherlands"
+                }
+              ],
+              "relatedParty": [
+                {
+                  "id": "C_1664289985003",
+                  "role": "SiteContact",
+                  "firstName": "Harald",
+                  "lastName": "Van Kampen",
+                  "phoneNumber": "0201201201",
+                  "email": "testcomarch194@gmail.com"
+                }
+              ]
+            }
+          },
+          {
+            "id": "915679119",
+            "action": "Add",
+            "service": {
+              "id": "915679376",
+              "serviceSpecification": {
+                "name": "CFS_INTERNET",
+                "baseType": "ServiceSpecification"
+              },
+              "serviceCharacteristic": [
+                {
+                  "name": "eaiServiceType",
+                  "value": "ipaccess:Internet"
+                }
+              ],
+              "serviceRelationship": [
+                {
+                  "@type": "ReliesOn",
+                  "id": "915679078"
+                }
+              ]
+            }
+          },
+          {
+            "id": "915679135",
+            "action": "Add",
+            "service": {
+              "id": "915679380",
+              "serviceSpecification": {
+                "name": "CFS_CGW",
+                "baseType": "ServiceSpecification"
+              },
+              "serviceCharacteristic": [
+                {
+                  "name": "eaiServiceType",
+                  "value": "ipaccess:CgwEquipment"
+                },
+                {
+                  "name": "model",
+                  "value": "DX5401"
+                },
+                {
+                  "name": "vendor",
+                  "value": "Zyxel"
+                }
+              ],
+              "serviceRelationship": [
+                {
+                  "@type": "ReliesOn",
+                  "id": "915679078"
+                }
+              ]
+            }
+          },
+          {
+            "id": "915679143",
+            "action": "Add",
+            "service": {
+              "id": "915679384",
+              "serviceSpecification": {
+                "name": "RFS_NTU",
+                "baseType": "ServiceSpecification"
+              },
+              "serviceCharacteristic": [
+                {
+                  "name": "eaiServiceType",
+                  "value": "ipaccess:NtuEquipment"
+                },
+                {
+                  "name": "model",
+                  "value": "NA"
+                },
+                {
+                  "name": "vendor",
+                  "value": "NA"
+                }
+              ],
+              "serviceRelationship": [
+                {
+                  "@type": "ReliesOn",
+                  "id": "915679078"
+                }
+              ]
+            }
+          }
+        ],
+        "relatedEntity": [
+          {
+            "id": "1901093601012731",
+            "name": "http://tessa-business.itservices.lan/start/installation_test/915679078?order=DynamicVariable.orderId",
+            "role": "TESSA-TestTool"
+          },
+          {
+            "id": "1901093601012732",
+            "name": "https://tsc.tele2.nl/915679078",
+            "role": "TSC-Selfcare"
+          }
+        ],
+        "state": "In Progress"
+      }
+    }
+  }
+  

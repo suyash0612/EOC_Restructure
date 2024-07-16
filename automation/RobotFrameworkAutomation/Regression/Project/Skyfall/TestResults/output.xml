@@ -1,0 +1,1678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.4 on win32)" generated="20240711 11:43:07.708" rpa="false" schemaversion="4">
+<suite id="s1" name="Skyfall Regression" source="C:\Users\Digip\Projects\EOC_NEW\automation\RobotFrameworkAutomation\Regression\Project\Skyfall\Skyfall_Regression.robot">
+<kw name="Setup Environment" library="database" type="SETUP">
+<doc>Initialize global variables required to run each test suite</doc>
+<kw name="Log" library="BuiltIn">
+<arg>C:\\Users\\Digip\\Projects\\EOC_NEW\\automation\\RobotFrameworkAutomation\\Regression\\Library\\Database/../..</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240711 11:43:08.815" level="INFO">C:\Users\Digip\Projects\EOC_NEW\automation\RobotFrameworkAutomation\Regression\Library\Database/../..</msg>
+<status status="PASS" starttime="20240711 11:43:08.815" endtime="20240711 11:43:08.815"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${eocDetails}</var>
+<arg>C:\\Users\\Digip\\Projects\\EOC_NEW\\automation\\RobotFrameworkAutomation\\Regression\\Library\\Database/../../TestData/Common/Environment/EOC.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20240711 11:43:08.815" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\Digip\Projects\EOC_NEW\automation\RobotFrameworkAutomation\Regression\TestData\Common\Environment\EOC.json"&gt;C:\Users\Digip\Projects\EOC_NEW\automation\RobotFrameworkAutomation\Regression\TestData\Common\Environment\EOC.json&lt;/a&gt;'.</msg>
+<msg timestamp="20240711 11:43:08.816" level="INFO">${eocDetails} = {
+    "local": {
+        "host": "http://localhost:8081",
+        "auth": "dXBhZG1pbjp1cGFkbWlu",
+        "database": {
+            "application": "ORACLE",
+            "name": "orcl",
+            "ho...</msg>
+<status status="PASS" starttime="20240711 11:43:08.815" endtime="20240711 11:43:08.816"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${eocDetailsJson}</var>
+<arg>json.loads('''${eocDetails}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240711 11:43:08.816" level="INFO">${eocDetailsJson} = {'local': {'host': 'http://localhost:8081', 'auth': 'dXBhZG1pbjp1cGFkbWlu', 'database': {'application': 'ORACLE', 'name': 'orcl', 'host': 'localhost', 'port': '1521', 'user': 'EOC20', 'password': 'EOC...</msg>
+<status status="PASS" starttime="20240711 11:43:08.816" endtime="20240711 11:43:08.816"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${eocEnv}</var>
+<arg>${eocDetailsJson}[${ENV}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:08.817" level="INFO">${eocEnv} = {'host': 'https://eoc.int.itservices.lan', 'auth': 'c3ZjX2NvbXVzZXI6ZXFDU0NxPmU4Iw==', 'database': {'application': 'EDB', 'name': 'eocdb2', 'host': '10.205.8.238', 'port': '5444', 'user': 'eoc', 'pass...</msg>
+<status status="PASS" starttime="20240711 11:43:08.816" endtime="20240711 11:43:08.817"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${eaiDetails}</var>
+<arg>${WORKSPACE}/TestData/Common/Environment/EAI.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20240711 11:43:08.817" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\Digip\Projects\EOC_NEW\automation\RobotFrameworkAutomation\Regression\TestData\Common\Environment\EAI.json"&gt;C:\Users\Digip\Projects\EOC_NEW\automation\RobotFrameworkAutomation\Regression\TestData\Common\Environment\EAI.json&lt;/a&gt;'.</msg>
+<msg timestamp="20240711 11:43:08.817" level="INFO">${eaiDetails} = {
+	"integration": {
+		"host": "https://eai.int.itservices.lan:443",
+		"auth": "ZW9jLWFwaXVzZXI6RW9jIUAyMyQ=",
+		"databaseHost": "nlui-osseaidb01",
+		"databaseName": "install"
+	},
+	"acceptance": {
+		"h...</msg>
+<status status="PASS" starttime="20240711 11:43:08.817" endtime="20240711 11:43:08.818"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${eaiDetailsJson}</var>
+<arg>json.loads('''${eaiDetails}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240711 11:43:08.818" level="INFO">${eaiDetailsJson} = {'integration': {'host': 'https://eai.int.itservices.lan:443', 'auth': 'ZW9jLWFwaXVzZXI6RW9jIUAyMyQ=', 'databaseHost': 'nlui-osseaidb01', 'databaseName': 'install'}, 'acceptance': {'host': 'https://ea...</msg>
+<status status="PASS" starttime="20240711 11:43:08.818" endtime="20240711 11:43:08.818"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${eaiEnv}</var>
+<arg>${eaiDetailsJson}[${ENV}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:08.818" level="INFO">${eaiEnv} = {'host': 'https://eai.int.itservices.lan:443', 'auth': 'ZW9jLWFwaXVzZXI6RW9jIUAyMyQ=', 'databaseHost': 'nlui-osseaidb01', 'databaseName': 'install'}</msg>
+<status status="PASS" starttime="20240711 11:43:08.818" endtime="20240711 11:43:08.818"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${goBossDetails}</var>
+<arg>C:\\Users\\Digip\\Projects\\EOC_NEW\\automation\\RobotFrameworkAutomation\\Regression\\Library\\Database/../../TestData/Common/Environment/GOBOSS.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20240711 11:43:08.819" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\Digip\Projects\EOC_NEW\automation\RobotFrameworkAutomation\Regression\TestData\Common\Environment\GOBOSS.json"&gt;C:\Users\Digip\Projects\EOC_NEW\automation\RobotFrameworkAutomation\Regression\TestData\Common\Environment\GOBOSS.json&lt;/a&gt;'.</msg>
+<msg timestamp="20240711 11:43:08.819" level="INFO">${goBossDetails} = {
+	"integration": {
+		"tecloSysHost":"https://gosuppliertelcosys-test.glasoperator.nl",
+		"gridzHost":"https://gridszstub-test.glasoperator.nl",
+        "vwtHost":"https://vwtstub.glasoperator.test",
+...</msg>
+<status status="PASS" starttime="20240711 11:43:08.818" endtime="20240711 11:43:08.819"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${goBossDetailsJson}</var>
+<arg>json.loads('''${goBossDetails}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240711 11:43:08.820" level="INFO">${goBossDetailsJson} = {'integration': {'tecloSysHost': 'https://gosuppliertelcosys-test.glasoperator.nl', 'gridzHost': 'https://gridszstub-test.glasoperator.nl', 'vwtHost': 'https://vwtstub.glasoperator.test', 'nimHost': '...</msg>
+<status status="PASS" starttime="20240711 11:43:08.819" endtime="20240711 11:43:08.820"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${goBossEnv}</var>
+<arg>${goBossDetailsJson}[${ENV}]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:08.820" level="INFO">${goBossEnv} = {'tecloSysHost': 'https://gosuppliertelcosys-test.glasoperator.nl', 'gridzHost': 'https://gridszstub-test.glasoperator.nl', 'vwtHost': 'https://vwtstub.glasoperator.test', 'nimHost': 'https://gosuppli...</msg>
+<status status="PASS" starttime="20240711 11:43:08.820" endtime="20240711 11:43:08.820"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${EOC_HOST}</arg>
+<arg>${eocEnv}[host]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.820" level="INFO">${EOC_HOST} = https://eoc.int.itservices.lan</msg>
+<status status="PASS" starttime="20240711 11:43:08.820" endtime="20240711 11:43:08.821"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${EOC_API_AUTH}</arg>
+<arg>${eocEnv}[auth]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.821" level="INFO">${EOC_API_AUTH} = c3ZjX2NvbXVzZXI6ZXFDU0NxPmU4Iw==</msg>
+<status status="PASS" starttime="20240711 11:43:08.821" endtime="20240711 11:43:08.821"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DB_APP}</arg>
+<arg>${eocEnv}[database][application]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.822" level="INFO">${DB_APP} = EDB</msg>
+<status status="PASS" starttime="20240711 11:43:08.821" endtime="20240711 11:43:08.822"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DB_NAME}</arg>
+<arg>${eocEnv}[database][name]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.823" level="INFO">${DB_NAME} = eocdb2</msg>
+<status status="PASS" starttime="20240711 11:43:08.822" endtime="20240711 11:43:08.823"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DB_USER}</arg>
+<arg>${eocEnv}[database][user]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.824" level="INFO">${DB_USER} = eoc</msg>
+<status status="PASS" starttime="20240711 11:43:08.823" endtime="20240711 11:43:08.824"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DB_PASS}</arg>
+<arg>${eocEnv}[database][password]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.825" level="INFO">${DB_PASS} = EOC</msg>
+<status status="PASS" starttime="20240711 11:43:08.824" endtime="20240711 11:43:08.825"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DB_HOST}</arg>
+<arg>${eocEnv}[database][host]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.826" level="INFO">${DB_HOST} = 10.205.8.238</msg>
+<status status="PASS" starttime="20240711 11:43:08.825" endtime="20240711 11:43:08.826"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${DB_PORT}</arg>
+<arg>${eocEnv}[database][port]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.827" level="INFO">${DB_PORT} = 5444</msg>
+<status status="PASS" starttime="20240711 11:43:08.826" endtime="20240711 11:43:08.827"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${OM_UI_UN}</arg>
+<arg>${eocEnv}[om_dashboard][username]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.828" level="INFO">${OM_UI_UN} = svc_comuser</msg>
+<status status="PASS" starttime="20240711 11:43:08.827" endtime="20240711 11:43:08.828"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${OM_UI_PWD}</arg>
+<arg>${eocEnv}[om_dashboard][password]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.829" level="INFO">${OM_UI_PWD} = eqCSCq&gt;e8#</msg>
+<status status="PASS" starttime="20240711 11:43:08.828" endtime="20240711 11:43:08.830"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${tecloSysHost}</arg>
+<arg>${goBossEnv}[tecloSysHost]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.830" level="INFO">${tecloSysHost} = https://gosuppliertelcosys-test.glasoperator.nl</msg>
+<status status="PASS" starttime="20240711 11:43:08.830" endtime="20240711 11:43:08.831"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${gridzHost}</arg>
+<arg>${goBossEnv}[gridzHost]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.832" level="INFO">${gridzHost} = https://gridszstub-test.glasoperator.nl</msg>
+<status status="PASS" starttime="20240711 11:43:08.831" endtime="20240711 11:43:08.832"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${vwtHost}</arg>
+<arg>${goBossEnv}[vwtHost]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.833" level="INFO">${vwtHost} = https://vwtstub.glasoperator.test</msg>
+<status status="PASS" starttime="20240711 11:43:08.832" endtime="20240711 11:43:08.833"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${NIM_HOST}</arg>
+<arg>${goBossEnv}[nimHost]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.834" level="INFO">${NIM_HOST} = https://gosuppliernim.glasoperator.test</msg>
+<status status="PASS" starttime="20240711 11:43:08.833" endtime="20240711 11:43:08.834"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${THUIS_HOST}</arg>
+<arg>${goBossEnv}[thuisHost]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.836" level="INFO">${THUIS_HOST} = https://tss.int.tele2.nl</msg>
+<status status="PASS" starttime="20240711 11:43:08.834" endtime="20240711 11:43:08.836"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${EAI_HOST}</arg>
+<arg>${eaiEnv}[host]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.836" level="INFO">${EAI_HOST} = https://eai.int.itservices.lan:443</msg>
+<status status="PASS" starttime="20240711 11:43:08.836" endtime="20240711 11:43:08.836"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${EAI_API_AUTH}</arg>
+<arg>${eaiEnv}[auth]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.837" level="INFO">${EAI_API_AUTH} = ZW9jLWFwaXVzZXI6RW9jIUAyMyQ=</msg>
+<status status="PASS" starttime="20240711 11:43:08.836" endtime="20240711 11:43:08.837"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${EAI_API_LIST}</arg>
+<arg>${eaiDetailsJson}[api]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240711 11:43:08.838" level="INFO">${EAI_API_LIST} = {'ProvisioningService': '/oss-core-ws/ond-adv/ProvisioningControllerService?wsdl', 'ProjectService': '/oss-core-ws/ocp/ProjectService?wsdl', 'ProvisioningRequestService': '/oss-core-ws/ond/Provisionin...</msg>
+<status status="PASS" starttime="20240711 11:43:08.837" endtime="20240711 11:43:08.838"/>
+</kw>
+<kw name="Connect Database" library="database">
+<doc>Connects to a database instance</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${DB_APP}" == "ORACLE"</arg>
+<arg>Connect To Database Using Custom Params</arg>
+<arg>cx_Oracle</arg>
+<arg>'EOC20/EOC20@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SERVER=DEDICATED)(SID=orcl)))'</arg>
+<arg>ELSE</arg>
+<arg>Connect To Database</arg>
+<arg>psycopg2</arg>
+<arg>${DB_NAME}</arg>
+<arg>${DBUser}</arg>
+<arg>${DBPass}</arg>
+<arg>${DBHost}</arg>
+<arg>${DBPort}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Connect To Database" library="DatabaseLibrary">
+<arg>psycopg2</arg>
+<arg>${DB_NAME}</arg>
+<arg>${DBUser}</arg>
+<arg>${DBPass}</arg>
+<arg>${DBHost}</arg>
+<arg>${DBPort}</arg>
+<doc>Loads the DB API 2.0 module given ``dbapiModuleName`` then uses it to
+connect to the database using provided parameters such as ``dbName``, ``dbUsername``, and ``dbPassword``.</doc>
+<msg timestamp="20240711 11:43:08.858" level="INFO">Connecting using : psycopg2.connect(database=eocdb2, user=eoc, password=***, host=10.205.8.238, port=5444)</msg>
+<status status="PASS" starttime="20240711 11:43:08.839" endtime="20240711 11:43:09.688"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:08.839" endtime="20240711 11:43:09.688"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:08.839" endtime="20240711 11:43:09.688"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<arg>warnings.filterwarnings("ignore", category=urllib3.exceptions.InsecureRequestWarning)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" starttime="20240711 11:43:09.688" endtime="20240711 11:43:09.689"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:08.815" endtime="20240711 11:43:09.689"/>
+</kw>
+<test id="s1-t1" name="TC03" line="69">
+<kw name="TC Skyfall Setup" library="SkyfallCommonFunctionality">
+<var>${som_request}</var>
+<arg>excelFile=Skyfall_Data</arg>
+<arg>sheet_name=main</arg>
+<arg>tcName=TC03</arg>
+<arg>payload=TC03</arg>
+<arg>iccid=${EMPTY}</arg>
+<doc>Generates a SOM Request based on SQM API
+excelFile : excelFile Name
+sheet_name : sheet
+tcName : TestCase Name
+payload : payload Name
+srId : Use this argument to place a update order on exisiting order where srId is used</doc>
+<kw name="Get File" library="OperatingSystem">
+<var>${payload}</var>
+<arg>${WORKSPACE}/TestData/Skyfall/${payload}.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20240711 11:43:09.692" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\Digip\Projects\EOC_NEW\automation\RobotFrameworkAutomation\Regression\TestData\Skyfall\TC03.json"&gt;C:\Users\Digip\Projects\EOC_NEW\automation\RobotFrameworkAutomation\Regression\TestData\Skyfall\TC03.json&lt;/a&gt;'.</msg>
+<msg timestamp="20240711 11:43:09.692" level="INFO">${payload} = {
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1...</msg>
+<status status="PASS" starttime="20240711 11:43:09.692" endtime="20240711 11:43:09.692"/>
+</kw>
+<kw name="Generate SOM Request ID V4" library="somapiV4">
+<var>${request_id}</var>
+<doc>Generates a unique ID for a SOM request</doc>
+<kw name="Evaluate" library="BuiltIn">
+<var>${timeStamp}</var>
+<arg>int(round(time.time() * 1000))</arg>
+<arg>time</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240711 11:43:09.694" level="INFO">${timeStamp} = 1720678389694</msg>
+<status status="PASS" starttime="20240711 11:43:09.693" endtime="20240711 11:43:09.694"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${reqId}</var>
+<arg>SEPARATOR=</arg>
+<arg>REQEOC</arg>
+<arg>${timeStamp}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20240711 11:43:09.694" level="INFO">${reqId} = REQEOC1720678389694</msg>
+<status status="PASS" starttime="20240711 11:43:09.694" endtime="20240711 11:43:09.694"/>
+</kw>
+<msg timestamp="20240711 11:43:09.695" level="INFO">${request_id} = REQEOC1720678389694</msg>
+<status status="PASS" starttime="20240711 11:43:09.693" endtime="20240711 11:43:09.695"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>DynamicVariable.RequestID</arg>
+<arg>${request_id}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.695" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.695" endtime="20240711 11:43:09.695"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>DynamicVariable.iccid</arg>
+<arg>${iccid}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.696" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.695" endtime="20240711 11:43:09.696"/>
+</kw>
+<kw name="Parse Excel Data" library="excel_parser">
+<var>${payload}</var>
+<arg>${WORKSPACE}/TestData/Skyfall/${excelFile}.xlsx</arg>
+<arg>${sheet_name}</arg>
+<arg>${tcName}</arg>
+<arg>${payload}</arg>
+<doc>Generates a SOM Request based on SQM API
+tcName : TestCase Name
+excelFile : excelFile Name
+payload : payload Name
+sheet_name : If no sheet is provided, it is assumed that the payload and sheet name are same
+srId : Use this argument to place a update order on exisiting order where srId is used</doc>
+<kw name="Parse Excel File" library="excel_parser">
+<var>&amp;{excel_data}</var>
+<arg>${excelFile}</arg>
+<arg>${sheet_name}</arg>
+<arg>${tcName}</arg>
+<msg timestamp="20240711 11:43:09.720" level="INFO">C:\Users\Digip\Projects\EOC_NEW\automation\RobotFrameworkAutomation\Regression\Library\Database/../../TestData/Skyfall/Skyfall_Data.xlsx</msg>
+<msg timestamp="20240711 11:43:09.720" level="INFO">&amp;{excel_data} = { description=[['DynamicVariable.description', 'Service Order for Skyfall Service']] | customerid=[['DynamicVariable.relatedParty.customerid', 1223545575]] | requestorid=[['DynamicVariable.relatedPart...</msg>
+<status status="PASS" starttime="20240711 11:43:09.698" endtime="20240711 11:43:09.720"/>
+</kw>
+<for flavor="IN">
+<var>${key}</var>
+<value>@{excel_data.keys()}</value>
+<iter>
+<var name="${key}">description</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.722" level="INFO">${DynamicVariable} = DynamicVariable.description</msg>
+<status status="PASS" starttime="20240711 11:43:09.721" endtime="20240711 11:43:09.722"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.722" level="INFO">${DynamicVariableValue} = Service Order for Skyfall Service</msg>
+<status status="PASS" starttime="20240711 11:43:09.722" endtime="20240711 11:43:09.722"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.723" level="INFO">${DynamicVariable} = DynamicVariable.description</msg>
+<status status="PASS" starttime="20240711 11:43:09.722" endtime="20240711 11:43:09.723"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.723" level="INFO">${DynamicVariableValue} = Service Order for Skyfall Service</msg>
+<status status="PASS" starttime="20240711 11:43:09.723" endtime="20240711 11:43:09.723"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.723" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.723" endtime="20240711 11:43:09.723"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.721" endtime="20240711 11:43:09.723"/>
+</iter>
+<iter>
+<var name="${key}">customerid</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.724" level="INFO">${DynamicVariable} = DynamicVariable.relatedParty.customerid</msg>
+<status status="PASS" starttime="20240711 11:43:09.723" endtime="20240711 11:43:09.724"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.724" level="INFO">${DynamicVariableValue} = 1223545575</msg>
+<status status="PASS" starttime="20240711 11:43:09.724" endtime="20240711 11:43:09.724"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.724" level="INFO">${DynamicVariable} = DynamicVariable.relatedParty.customerid</msg>
+<status status="PASS" starttime="20240711 11:43:09.724" endtime="20240711 11:43:09.725"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.725" level="INFO">${DynamicVariableValue} = 1223545575</msg>
+<status status="PASS" starttime="20240711 11:43:09.725" endtime="20240711 11:43:09.725"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.725" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.725" endtime="20240711 11:43:09.725"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.723" endtime="20240711 11:43:09.725"/>
+</iter>
+<iter>
+<var name="${key}">requestorid</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.726" level="INFO">${DynamicVariable} = DynamicVariable.relatedParty.requestorid</msg>
+<status status="PASS" starttime="20240711 11:43:09.725" endtime="20240711 11:43:09.726"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.726" level="INFO">${DynamicVariableValue} = BSS-Simulator</msg>
+<status status="PASS" starttime="20240711 11:43:09.726" endtime="20240711 11:43:09.726"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.726" level="INFO">${DynamicVariable} = DynamicVariable.relatedParty.requestorid</msg>
+<status status="PASS" starttime="20240711 11:43:09.726" endtime="20240711 11:43:09.726"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.727" level="INFO">${DynamicVariableValue} = BSS-Simulator</msg>
+<status status="PASS" starttime="20240711 11:43:09.726" endtime="20240711 11:43:09.727"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.727" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.727" endtime="20240711 11:43:09.727"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.725" endtime="20240711 11:43:09.727"/>
+</iter>
+<iter>
+<var name="${key}">tcName</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.727" level="INFO">${DynamicVariable} = DynamicVariable.tcName</msg>
+<status status="PASS" starttime="20240711 11:43:09.727" endtime="20240711 11:43:09.727"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.728" level="INFO">${DynamicVariableValue} = TC01</msg>
+<status status="PASS" starttime="20240711 11:43:09.728" endtime="20240711 11:43:09.728"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.728" level="INFO">${DynamicVariable} = DynamicVariable.tcName</msg>
+<status status="PASS" starttime="20240711 11:43:09.728" endtime="20240711 11:43:09.728"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.728" level="INFO">${DynamicVariableValue} = TC01</msg>
+<status status="PASS" starttime="20240711 11:43:09.728" endtime="20240711 11:43:09.728"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.729" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.728" endtime="20240711 11:43:09.729"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.727" endtime="20240711 11:43:09.729"/>
+</iter>
+<iter>
+<var name="${key}">sla</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.729" level="INFO">${DynamicVariable} = DynamicVariable.sla</msg>
+<status status="PASS" starttime="20240711 11:43:09.729" endtime="20240711 11:43:09.729"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.729" level="INFO">${DynamicVariableValue} = Standard</msg>
+<status status="PASS" starttime="20240711 11:43:09.729" endtime="20240711 11:43:09.729"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.730" level="INFO">${DynamicVariable} = DynamicVariable.sla</msg>
+<status status="PASS" starttime="20240711 11:43:09.730" endtime="20240711 11:43:09.730"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.730" level="INFO">${DynamicVariableValue} = Standard</msg>
+<status status="PASS" starttime="20240711 11:43:09.730" endtime="20240711 11:43:09.730"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.730" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.730" endtime="20240711 11:43:09.730"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.729" endtime="20240711 11:43:09.730"/>
+</iter>
+<iter>
+<var name="${key}">serviceDeviceType</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.731" level="INFO">${DynamicVariable} = DynamicVariable.serviceDeviceType</msg>
+<status status="PASS" starttime="20240711 11:43:09.731" endtime="20240711 11:43:09.731"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.732" level="INFO">${DynamicVariableValue} = IDU</msg>
+<status status="PASS" starttime="20240711 11:43:09.732" endtime="20240711 11:43:09.732"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.733" level="INFO">${DynamicVariable} = DynamicVariable.serviceDeviceType</msg>
+<status status="PASS" starttime="20240711 11:43:09.732" endtime="20240711 11:43:09.733"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.733" level="INFO">${DynamicVariableValue} = IDU</msg>
+<status status="PASS" starttime="20240711 11:43:09.733" endtime="20240711 11:43:09.733"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.734" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.734" endtime="20240711 11:43:09.734"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.731" endtime="20240711 11:43:09.734"/>
+</iter>
+<iter>
+<var name="${key}">ServiceProvider</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.735" level="INFO">${DynamicVariable} = DynamicVariable.ServiceProvider.name</msg>
+<status status="PASS" starttime="20240711 11:43:09.735" endtime="20240711 11:43:09.735"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.736" level="INFO">${DynamicVariableValue} = TMNL</msg>
+<status status="PASS" starttime="20240711 11:43:09.735" endtime="20240711 11:43:09.736"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.736" level="INFO">${DynamicVariable} = DynamicVariable.ServiceProvider.name</msg>
+<status status="PASS" starttime="20240711 11:43:09.736" endtime="20240711 11:43:09.736"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.737" level="INFO">${DynamicVariableValue} = TMNL</msg>
+<status status="PASS" starttime="20240711 11:43:09.736" endtime="20240711 11:43:09.737"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.737" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.737" endtime="20240711 11:43:09.738"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.735" endtime="20240711 11:43:09.738"/>
+</iter>
+<iter>
+<var name="${key}">place_id</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.738" level="INFO">${DynamicVariable} = DynamicVariable.place.id</msg>
+<status status="PASS" starttime="20240711 11:43:09.738" endtime="20240711 11:43:09.738"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.739" level="INFO">${DynamicVariableValue} = 7941 XT-30</msg>
+<status status="PASS" starttime="20240711 11:43:09.739" endtime="20240711 11:43:09.739"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.739" level="INFO">${DynamicVariable} = DynamicVariable.place.id</msg>
+<status status="PASS" starttime="20240711 11:43:09.739" endtime="20240711 11:43:09.740"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.740" level="INFO">${DynamicVariableValue} = 7941 XT-30</msg>
+<status status="PASS" starttime="20240711 11:43:09.740" endtime="20240711 11:43:09.740"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.741" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.740" endtime="20240711 11:43:09.741"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.738" endtime="20240711 11:43:09.741"/>
+</iter>
+<iter>
+<var name="${key}">place_role</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.741" level="INFO">${DynamicVariable} = DynamicVariable.place.role</msg>
+<status status="PASS" starttime="20240711 11:43:09.741" endtime="20240711 11:43:09.742"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.742" level="INFO">${DynamicVariableValue} = ServiceAddress</msg>
+<status status="PASS" starttime="20240711 11:43:09.742" endtime="20240711 11:43:09.742"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.743" level="INFO">${DynamicVariable} = DynamicVariable.place.role</msg>
+<status status="PASS" starttime="20240711 11:43:09.742" endtime="20240711 11:43:09.743"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.743" level="INFO">${DynamicVariableValue} = ServiceAddress</msg>
+<status status="PASS" starttime="20240711 11:43:09.743" endtime="20240711 11:43:09.743"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.744" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.744" endtime="20240711 11:43:09.744"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.741" endtime="20240711 11:43:09.744"/>
+</iter>
+<iter>
+<var name="${key}">place_city</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.745" level="INFO">${DynamicVariable} = DynamicVariable.place.city</msg>
+<status status="PASS" starttime="20240711 11:43:09.744" endtime="20240711 11:43:09.745"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.745" level="INFO">${DynamicVariableValue} = UTRECHT</msg>
+<status status="PASS" starttime="20240711 11:43:09.745" endtime="20240711 11:43:09.745"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.746" level="INFO">${DynamicVariable} = DynamicVariable.place.city</msg>
+<status status="PASS" starttime="20240711 11:43:09.745" endtime="20240711 11:43:09.746"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.747" level="INFO">${DynamicVariableValue} = UTRECHT</msg>
+<status status="PASS" starttime="20240711 11:43:09.746" endtime="20240711 11:43:09.747"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.748" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.747" endtime="20240711 11:43:09.748"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.744" endtime="20240711 11:43:09.748"/>
+</iter>
+<iter>
+<var name="${key}">place_country</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.749" level="INFO">${DynamicVariable} = DynamicVariable.place.country</msg>
+<status status="PASS" starttime="20240711 11:43:09.749" endtime="20240711 11:43:09.749"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.750" level="INFO">${DynamicVariableValue} = NLD</msg>
+<status status="PASS" starttime="20240711 11:43:09.749" endtime="20240711 11:43:09.750"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.750" level="INFO">${DynamicVariable} = DynamicVariable.place.country</msg>
+<status status="PASS" starttime="20240711 11:43:09.750" endtime="20240711 11:43:09.751"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.751" level="INFO">${DynamicVariableValue} = NLD</msg>
+<status status="PASS" starttime="20240711 11:43:09.751" endtime="20240711 11:43:09.751"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.752" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.751" endtime="20240711 11:43:09.752"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.748" endtime="20240711 11:43:09.752"/>
+</iter>
+<iter>
+<var name="${key}">place_houseNumber</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.753" level="INFO">${DynamicVariable} = DynamicVariable.place.houseNumber</msg>
+<status status="PASS" starttime="20240711 11:43:09.752" endtime="20240711 11:43:09.753"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.753" level="INFO">${DynamicVariableValue} = 30</msg>
+<status status="PASS" starttime="20240711 11:43:09.753" endtime="20240711 11:43:09.753"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.754" level="INFO">${DynamicVariable} = DynamicVariable.place.houseNumber</msg>
+<status status="PASS" starttime="20240711 11:43:09.753" endtime="20240711 11:43:09.754"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.754" level="INFO">${DynamicVariableValue} = 30</msg>
+<status status="PASS" starttime="20240711 11:43:09.754" endtime="20240711 11:43:09.754"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.755" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.755" endtime="20240711 11:43:09.755"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.752" endtime="20240711 11:43:09.755"/>
+</iter>
+<iter>
+<var name="${key}">place_street</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.756" level="INFO">${DynamicVariable} = DynamicVariable.place.street</msg>
+<status status="PASS" starttime="20240711 11:43:09.755" endtime="20240711 11:43:09.756"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.756" level="INFO">${DynamicVariableValue} = Johannes Brahmsstraat</msg>
+<status status="PASS" starttime="20240711 11:43:09.756" endtime="20240711 11:43:09.756"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.757" level="INFO">${DynamicVariable} = DynamicVariable.place.street</msg>
+<status status="PASS" starttime="20240711 11:43:09.757" endtime="20240711 11:43:09.757"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.757" level="INFO">${DynamicVariableValue} = Johannes Brahmsstraat</msg>
+<status status="PASS" starttime="20240711 11:43:09.757" endtime="20240711 11:43:09.757"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.758" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.758" endtime="20240711 11:43:09.758"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.755" endtime="20240711 11:43:09.758"/>
+</iter>
+<iter>
+<var name="${key}">place_postcode</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.759" level="INFO">${DynamicVariable} = DynamicVariable.place.postcode</msg>
+<status status="PASS" starttime="20240711 11:43:09.758" endtime="20240711 11:43:09.759"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.759" level="INFO">${DynamicVariableValue} = 7941 XT</msg>
+<status status="PASS" starttime="20240711 11:43:09.759" endtime="20240711 11:43:09.759"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.760" level="INFO">${DynamicVariable} = DynamicVariable.place.postcode</msg>
+<status status="PASS" starttime="20240711 11:43:09.760" endtime="20240711 11:43:09.760"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.760" level="INFO">${DynamicVariableValue} = 7941 XT</msg>
+<status status="PASS" starttime="20240711 11:43:09.760" endtime="20240711 11:43:09.760"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.761" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.761" endtime="20240711 11:43:09.761"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.758" endtime="20240711 11:43:09.761"/>
+</iter>
+<iter>
+<var name="${key}">place_@type</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.762" level="INFO">${DynamicVariable} = DynamicVariable.place.@type</msg>
+<status status="PASS" starttime="20240711 11:43:09.762" endtime="20240711 11:43:09.762"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.763" level="INFO">${DynamicVariableValue} = GeographicAddress</msg>
+<status status="PASS" starttime="20240711 11:43:09.762" endtime="20240711 11:43:09.763"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.763" level="INFO">${DynamicVariable} = DynamicVariable.place.@type</msg>
+<status status="PASS" starttime="20240711 11:43:09.763" endtime="20240711 11:43:09.763"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.763" level="INFO">${DynamicVariableValue} = GeographicAddress</msg>
+<status status="PASS" starttime="20240711 11:43:09.763" endtime="20240711 11:43:09.763"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.764" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.763" endtime="20240711 11:43:09.764"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.761" endtime="20240711 11:43:09.764"/>
+</iter>
+<iter>
+<var name="${key}">accessMethod</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.764" level="INFO">${DynamicVariable} = DynamicVariable.accessMethod</msg>
+<status status="PASS" starttime="20240711 11:43:09.764" endtime="20240711 11:43:09.764"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.764" level="INFO">${DynamicVariableValue} = Mobile</msg>
+<status status="PASS" starttime="20240711 11:43:09.764" endtime="20240711 11:43:09.764"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.765" level="INFO">${DynamicVariable} = DynamicVariable.accessMethod</msg>
+<status status="PASS" starttime="20240711 11:43:09.765" endtime="20240711 11:43:09.765"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.765" level="INFO">${DynamicVariableValue} = Mobile</msg>
+<status status="PASS" starttime="20240711 11:43:09.765" endtime="20240711 11:43:09.765"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.766" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.765" endtime="20240711 11:43:09.766"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.764" endtime="20240711 11:43:09.766"/>
+</iter>
+<iter>
+<var name="${key}">isPrimaryAccess</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.766" level="INFO">${DynamicVariable} = "DynamicVariable.isPrimaryAccess"</msg>
+<status status="PASS" starttime="20240711 11:43:09.766" endtime="20240711 11:43:09.766"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.766" level="INFO">${DynamicVariableValue} = true</msg>
+<status status="PASS" starttime="20240711 11:43:09.766" endtime="20240711 11:43:09.766"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.767" level="INFO">${DynamicVariable} = "DynamicVariable.isPrimaryAccess"</msg>
+<status status="PASS" starttime="20240711 11:43:09.766" endtime="20240711 11:43:09.767"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.767" level="INFO">${DynamicVariableValue} = true</msg>
+<status status="PASS" starttime="20240711 11:43:09.767" endtime="20240711 11:43:09.767"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.767" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.767" endtime="20240711 11:43:09.767"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.766" endtime="20240711 11:43:09.767"/>
+</iter>
+<iter>
+<var name="${key}">technology</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.768" level="INFO">${DynamicVariable} = DynamicVariable.technology</msg>
+<status status="PASS" starttime="20240711 11:43:09.767" endtime="20240711 11:43:09.768"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.768" level="INFO">${DynamicVariableValue} = 5G+4G</msg>
+<status status="PASS" starttime="20240711 11:43:09.768" endtime="20240711 11:43:09.768"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.768" level="INFO">${DynamicVariable} = DynamicVariable.technology</msg>
+<status status="PASS" starttime="20240711 11:43:09.768" endtime="20240711 11:43:09.768"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.769" level="INFO">${DynamicVariableValue} = 5G+4G</msg>
+<status status="PASS" starttime="20240711 11:43:09.768" endtime="20240711 11:43:09.769"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.769" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.769" endtime="20240711 11:43:09.769"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.767" endtime="20240711 11:43:09.769"/>
+</iter>
+<iter>
+<var name="${key}">iccid</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.769" level="INFO">${DynamicVariable} = DynamicVariable.iccidZZZ</msg>
+<status status="PASS" starttime="20240711 11:43:09.769" endtime="20240711 11:43:09.769"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.770" level="INFO">${DynamicVariableValue} = 8931163200113699840</msg>
+<status status="PASS" starttime="20240711 11:43:09.769" endtime="20240711 11:43:09.770"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.770" level="INFO">${DynamicVariable} = DynamicVariable.iccidZZZ</msg>
+<status status="PASS" starttime="20240711 11:43:09.770" endtime="20240711 11:43:09.770"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.770" level="INFO">${DynamicVariableValue} = 8931163200113699840</msg>
+<status status="PASS" starttime="20240711 11:43:09.770" endtime="20240711 11:43:09.770"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.771" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.770" endtime="20240711 11:43:09.771"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.769" endtime="20240711 11:43:09.771"/>
+</iter>
+<iter>
+<var name="${key}">paymentMethod</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.771" level="INFO">${DynamicVariable} = DynamicVariable.paymentMethod</msg>
+<status status="PASS" starttime="20240711 11:43:09.771" endtime="20240711 11:43:09.771"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.771" level="INFO">${DynamicVariableValue} = postpaid</msg>
+<status status="PASS" starttime="20240711 11:43:09.771" endtime="20240711 11:43:09.771"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.772" level="INFO">${DynamicVariable} = DynamicVariable.paymentMethod</msg>
+<status status="PASS" starttime="20240711 11:43:09.772" endtime="20240711 11:43:09.772"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.772" level="INFO">${DynamicVariableValue} = postpaid</msg>
+<status status="PASS" starttime="20240711 11:43:09.772" endtime="20240711 11:43:09.772"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.772" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.772" endtime="20240711 11:43:09.772"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.771" endtime="20240711 11:43:09.772"/>
+</iter>
+<iter>
+<var name="${key}">ratePlan</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.773" level="INFO">${DynamicVariable} = DynamicVariable.ratePlan</msg>
+<status status="PASS" starttime="20240711 11:43:09.773" endtime="20240711 11:43:09.773"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.773" level="INFO">${DynamicVariableValue} = SKYFL</msg>
+<status status="PASS" starttime="20240711 11:43:09.773" endtime="20240711 11:43:09.773"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.773" level="INFO">${DynamicVariable} = DynamicVariable.ratePlan</msg>
+<status status="PASS" starttime="20240711 11:43:09.773" endtime="20240711 11:43:09.773"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.774" level="INFO">${DynamicVariableValue} = SKYFL</msg>
+<status status="PASS" starttime="20240711 11:43:09.774" endtime="20240711 11:43:09.774"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.774" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.774" endtime="20240711 11:43:09.774"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.772" endtime="20240711 11:43:09.774"/>
+</iter>
+<iter>
+<var name="${key}">securityVariant</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.774" level="INFO">${DynamicVariable} = DynamicVariable.securityVariant</msg>
+<status status="PASS" starttime="20240711 11:43:09.774" endtime="20240711 11:43:09.775"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.775" level="INFO">${DynamicVariableValue} = EVO</msg>
+<status status="PASS" starttime="20240711 11:43:09.775" endtime="20240711 11:43:09.775"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.775" level="INFO">${DynamicVariable} = DynamicVariable.securityVariant</msg>
+<status status="PASS" starttime="20240711 11:43:09.775" endtime="20240711 11:43:09.775"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.775" level="INFO">${DynamicVariableValue} = EVO</msg>
+<status status="PASS" starttime="20240711 11:43:09.775" endtime="20240711 11:43:09.775"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.776" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.776" endtime="20240711 11:43:09.776"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.774" endtime="20240711 11:43:09.776"/>
+</iter>
+<iter>
+<var name="${key}">CFS_INTERNET_CONNECTION</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariable}</var>
+<arg>${excel_data}[${key}][0][0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.776" level="INFO">${DynamicVariable} = DynamicVariable.CFS_INTERNET_CONNECTION.srId</msg>
+<status status="PASS" starttime="20240711 11:43:09.776" endtime="20240711 11:43:09.776"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${excel_data}[${key}][0][1]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:09.776" level="INFO">${DynamicVariableValue} = 763243346</msg>
+<status status="PASS" starttime="20240711 11:43:09.776" endtime="20240711 11:43:09.777"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${DynamicVariable}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20240711 11:43:09.777" level="INFO">${DynamicVariable} = DynamicVariable.CFS_INTERNET_CONNECTION.srId</msg>
+<status status="PASS" starttime="20240711 11:43:09.777" endtime="20240711 11:43:09.777"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${DynamicVariableValue}</var>
+<arg>${DynamicVariableValue}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240711 11:43:09.777" level="INFO">${DynamicVariableValue} = 763243346</msg>
+<status status="PASS" starttime="20240711 11:43:09.777" endtime="20240711 11:43:09.777"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${payload}</var>
+<arg>${payload}</arg>
+<arg>${DynamicVariable}</arg>
+<arg>${DynamicVariableValue}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240711 11:43:09.778" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.777" endtime="20240711 11:43:09.778"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:09.776" endtime="20240711 11:43:09.778"/>
+</iter>
+<status status="PASS" starttime="20240711 11:43:09.720" endtime="20240711 11:43:09.778"/>
+</for>
+<msg timestamp="20240711 11:43:09.778" level="INFO">${payload} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.696" endtime="20240711 11:43:09.778"/>
+</kw>
+<msg timestamp="20240711 11:43:09.778" level="INFO">${som_request} = {
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545...</msg>
+<status status="PASS" starttime="20240711 11:43:09.690" endtime="20240711 11:43:09.778"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${som_request}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240711 11:43:09.779" level="INFO">{
+    "requestId": "REQEOC1720678389694",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545575",
+        "role": "Customer",
+        "name": "Sky Fall Customer ",
+        "customerSegment": "massMarket",
+        "@referredType": "Organization"
+      },
+      {
+        "id": "1223545575",
+		"role": "Requester",
+		"name": "TC01"
+      }
+    ],
+    "serviceOrderItem": [
+      {
+        "id":"3",
+        "action":"add",
+        "service":{
+           "serviceCharacteristic":[
+              {
+                 "name":"securityVariant",
+                 "value":"EVO",
+                 "valueType":"string"
+              }
+           ],
+           "serviceSpecification":{
+              "id":"CFS_INTERNET_SECURITY",
+              "name":"CFS_INTERNET_SECURITY"
+           },
+           "serviceRelationship":[
+              {
+                 "service":{
+                    "id":"763243346"
+                 },
+                 "relationshipType":"dependsOn"
+              }
+           ]
+        }
+     }
+    ]
+  }
+  </msg>
+<status status="PASS" starttime="20240711 11:43:09.778" endtime="20240711 11:43:09.779"/>
+</kw>
+<kw name="Create Order V4" library="somapiV4">
+<var>${orderId}</var>
+<arg>${som_request}</arg>
+<doc>Sends create order towards EOC</doc>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>eoc session</arg>
+<arg>${EOC_HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20240711 11:43:09.779" level="INFO">Creating Session using : alias=eoc session, url=https://eoc.int.itservices.lan, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240711 11:43:09.779" endtime="20240711 11:43:09.780"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<arg>authorization=Basic ${EOC_API_AUTH}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240711 11:43:09.780" level="INFO">${header} = {'Content-Type': 'application/json', 'authorization': 'Basic c3ZjX2NvbXVzZXI6ZXFDU0NxPmU4Iw=='}</msg>
+<status status="PASS" starttime="20240711 11:43:09.780" endtime="20240711 11:43:09.780"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>eoc session</arg>
+<arg>${API_OPER_DICT_V4}[CREATE_ORDER]</arg>
+<arg>data=${request}</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20240711 11:43:09.780" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20240711 11:43:11.989" level="INFO">POST Request : url=https://eoc.int.itservices.lan/eoc/tmf-api/serviceOrdering/v4/serviceOrder 
+ path_url=/eoc/tmf-api/serviceOrdering/v4/serviceOrder 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'authorization': 'Basic c3ZjX2NvbXVzZXI6ZXFDU0NxPmU4Iw==', 'Content-Length': '1127'} 
+ body=b'{\n    "requestId": "REQEOC1720678389694",\n    "externalId": "2356",\n    "description": "Service Order for Skyfall Service with Internet Security ",\n    "relatedParty": [\n      {\n        "id": "1223545575",\n        "role": "Customer",\n        "name": "Sky Fall Customer ",\n        "customerSegment": "massMarket",\n        "@referredType": "Organization"\n      },\n      {\n        "id": "1223545575",\n\t\t"role": "Requester",\n\t\t"name": "TC01"\n      }\n    ],\n    "serviceOrderItem": [\n      {\n        "id":"3",\n        "action":"add",\n        "service":{\n           "serviceCharacteristic":[\n              {\n                 "name":"securityVariant",\n                 "value":"EVO",\n                 "valueType":"string"\n              }\n           ],\n           "serviceSpecification":{\n              "id":"CFS_INTERNET_SECURITY",\n              "name":"CFS_INTERNET_SECURITY"\n           },\n           "serviceRelationship":[\n              {\n                 "service":{\n                    "id":"763243346"\n                 },\n                 "relationshipType":"dependsOn"\n              }\n           ]\n        }\n     }\n    ]\n  }\n  ' 
+ </msg>
+<msg timestamp="20240711 11:43:11.989" level="INFO">POST Response : url=https://eoc.int.itservices.lan/eoc/tmf-api/serviceOrdering/v4/serviceOrder 
+ status=201, reason=Created 
+ headers={'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Location': 'https://eoc.int.itservices.lan:443/eoc/serviceOrderingManagement/v1/serviceOrder/130108405135167', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '130', 'Content-Security-Policy': "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'", 'Date': 'Thu, 11 Jul 2024 06:13:11 GMT'} 
+ body={"id":"130108405135167","href":"https://eoc.int.itservices.lan:443/eoc/serviceOrderingManagement/v1/serviceOrder/130108405135167"} 
+ </msg>
+<msg timestamp="20240711 11:43:11.989" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20240711 11:43:09.780" endtime="20240711 11:43:11.989"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>${response}</arg>
+<arg>Post Request</arg>
+<arg>eoc session</arg>
+<arg>eoc/tmf-api/serviceOrdering/v4/serviceOrder</arg>
+<arg>data=${request}</arg>
+<arg>headers=${header}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20240711 11:43:11.989" endtime="20240711 11:43:11.990"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20240711 11:43:11.990" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20240711 11:43:11.990" endtime="20240711 11:43:11.990"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${orderId}</var>
+<arg>${response.json()['id']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240711 11:43:11.991" level="INFO">${orderId} = 130108405135167</msg>
+<status status="PASS" starttime="20240711 11:43:11.991" endtime="20240711 11:43:11.991"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${orderId}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240711 11:43:11.991" endtime="20240711 11:43:11.992"/>
+</kw>
+<kw name="Get Manual Task for EAI design and assign V4" library="somapiV4">
+<arg>${orderId}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>2 min</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240711 11:45:11.997" level="INFO">Slept 2 minutes</msg>
+<status status="PASS" starttime="20240711 11:43:11.992" endtime="20240711 11:45:11.997"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>OM Get Order</arg>
+<arg>${EOC_HOST}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20240711 11:45:11.998" level="INFO">Creating Session using : alias=OM Get Order, url=https://eoc.int.itservices.lan, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240711 11:45:11.997" endtime="20240711 11:45:11.998"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<arg>authorization=Basic ${EOC_API_AUTH}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240711 11:45:11.999" level="INFO">${header} = {'Content-Type': 'application/json', 'authorization': 'Basic c3ZjX2NvbXVzZXI6ZXFDU0NxPmU4Iw=='}</msg>
+<status status="PASS" starttime="20240711 11:45:11.998" endtime="20240711 11:45:11.999"/>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<var>${taskResponse}</var>
+<arg>OM Get Order</arg>
+<arg>/eoc/workList/v2/workOrderItem/?sort=-requestedDeliveryDate&amp;orderId=${orderId}&amp;mode=taskManagerAdvanced&amp;state=onGoing</arg>
+<arg>headers=${header}</arg>
+<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
+<msg timestamp="20240711 11:45:11.999" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+<msg timestamp="20240711 11:45:13.580" level="INFO">GET Request : url=https://eoc.int.itservices.lan/eoc/workList/v2/workOrderItem/?sort=-requestedDeliveryDate&amp;orderId=130108405135167&amp;mode=taskManagerAdvanced&amp;state=onGoing 
+ path_url=/eoc/workList/v2/workOrderItem/?sort=-requestedDeliveryDate&amp;orderId=130108405135167&amp;mode=taskManagerAdvanced&amp;state=onGoing 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'authorization': 'Basic c3ZjX2NvbXVzZXI6ZXFDU0NxPmU4Iw=='} 
+ body=None 
+ </msg>
+<msg timestamp="20240711 11:45:13.580" level="INFO">GET Response : url=https://eoc.int.itservices.lan/eoc/workList/v2/workOrderItem/?sort=-requestedDeliveryDate&amp;orderId=130108405135167&amp;mode=taskManagerAdvanced&amp;state=onGoing 
+ status=200, reason=OK 
+ headers={'Cache-Control': 'no-cache, no-store, max-age=0', 'X-XSS-Protection': '1', 'Content-Security-Policy': "default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'", 'Date': 'Thu, 11 Jul 2024 06:15:12 GMT', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Content-Type-Options': 'nosniff', 'Content-Type': 'application/json;charset=UTF-8', 'Content-Length': '2', 'Content-Language': 'en-xx'} 
+ body=[] 
+ </msg>
+<msg timestamp="20240711 11:45:13.580" level="INFO">${taskResponse} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20240711 11:45:11.999" endtime="20240711 11:45:13.580"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${taskLen}</var>
+<arg>${taskResponse.json()}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20240711 11:45:13.581" level="INFO">Length is 0</msg>
+<msg timestamp="20240711 11:45:13.581" level="INFO">${taskLen} = 0</msg>
+<status status="PASS" starttime="20240711 11:45:13.580" endtime="20240711 11:45:13.582"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>ee:${taskLen}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240711 11:45:13.582" endtime="20240711 11:45:13.582"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Wait Until Keyword Succeeds</arg>
+<arg>5 min</arg>
+<arg>5 sec</arg>
+<arg>Run keyword if</arg>
+<arg>"${taskLen}" == "0"</arg>
+<arg>Get Manual Task for EAI dessign and assign</arg>
+<arg>${orderId}</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20240711 11:45:13.582" endtime="20240711 11:45:13.583"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${taskLen}" != "0"</arg>
+<arg>Check the task V4</arg>
+<arg>${orderId}</arg>
+<arg>${taskResponse.json()}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20240711 11:45:13.583" endtime="20240711 11:45:13.583"/>
+</kw>
+<status status="PASS" starttime="20240711 11:43:11.992" endtime="20240711 11:45:13.583"/>
+</kw>
+<msg timestamp="20240711 11:45:13.584" level="INFO">${orderId} = 130108405135167</msg>
+<status status="PASS" starttime="20240711 11:43:09.779" endtime="20240711 11:45:13.584"/>
+</kw>
+<doc>Skyfall
+Add Internet Security as a Standalone Service for a subscriber</doc>
+<status status="PASS" starttime="20240711 11:43:09.689" endtime="20240711 11:45:13.584"/>
+</test>
+<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
+<doc>Disconnects from the database.</doc>
+<msg timestamp="20240711 11:45:13.586" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20240711 11:45:13.586" endtime="20240711 11:45:13.586"/>
+</kw>
+<doc>Skyfall Regression</doc>
+<status status="PASS" starttime="20240711 11:43:07.710" endtime="20240711 11:45:13.586"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Skyfall Regression">Skyfall Regression</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240711 11:43:09.780" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20240711 11:45:11.999" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
+</errors>
+</robot>

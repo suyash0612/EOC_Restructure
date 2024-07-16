@@ -1,0 +1,9 @@
+{
+	"actionName":"installationFailed",
+	"data":{
+		"reasonCode":"1505",
+		"reasonDescription":"ISRA could not be found",
+		"domain":"EOC",
+		"note":""
+	}
+}

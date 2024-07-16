@@ -1,0 +1,17 @@
+{
+	"integration": {
+		"tecloSysHost":"https://gosuppliertelcosys-test.glasoperator.nl",
+		"gridzHost":"https://gridszstub-test.glasoperator.nl",
+        "vwtHost":"https://vwtstub.glasoperator.test",
+		"nimHost":"https://gosuppliernim.glasoperator.test",
+		"thuisHost":"https://tss.int.tele2.nl"
+
+	},
+	"acceptance": {
+		"tecloSysHost":"https://gosuppliertelcosys-acceptance.glasoperator.nl",
+		"gridzHost":"https://gridszstub-acceptance.glasoperator.nl",
+        "vwtHost":"https://vwtstub.glasoperator.acceptance",
+		"nimHost":"https://gosuppliernim.glasoperator.acc",
+		"thuisHost":"https://tss.uat.tele2.nl"
+	}	
+}

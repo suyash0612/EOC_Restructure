@@ -1,0 +1,181 @@
+{
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+    "description": "Service order for IP Access",
+    "relatedParty": [
+        {
+            "id": "DynamicVariable.tcName",
+            "role": "Customer",
+            "name": "IP Access Robot Framework DynamicVariable.tcName"
+        },
+        {
+            "id": "BSS-Simulator",
+            "role": "Requester",
+            "name": "BSS Netcracker Integration Environment"
+        }
+    ],
+    "orderItem": [
+        {
+            "id": "1",
+            "action": "Add",
+            "service": {
+                "serviceCharacteristic": [
+                    {
+                        "name": "sla",
+                        "valueType": "String",
+                        "value": "Standard"
+                    },
+                    {
+                        "name": "installationType",
+                        "valueType": "String",
+                        "value": "Engineer"
+                    },
+				    { 
+					  "name":"promisedBandwidthDown",
+					  "valueType":"Number",
+					  "value":"DynamicVariable.promisedBandwidthDown"
+				   },
+				   {
+					  "name":"promisedBandwidthUp",
+					  "valueType":"Number",
+						  "value":"DynamicVariable.promisedBandwidthUp"
+				   },
+				   {
+					  "name":"serviceBandwidthDown",
+					  "valueType":"Number",
+					  "value":"DynamicVariable.serviceBandwidthDown"
+				   },
+				   {
+					  "name":"serviceBandwidthUp",
+					  "valueType":"Number",
+					  "value":"DynamicVariable.serviceBandwidthUp"
+				   },
+				   {
+					  "name":"minimumBandwidthDown",
+					  "valueType":"Number",
+					  "value":"DynamicVariable.minimumBandwidthDown"
+				   },
+				   {
+					  "name":"minimumBandwidthUp",
+					  "valueType":"Number",
+					  "value":"DynamicVariable.minimumBandwidthUp"
+				   }
+                ],
+                "relatedParty": [
+                    {
+                        "@type": "ContactParty",
+                        "role": "SiteContact",
+                        "id": "1234567907",
+                        "firstName": "RobotFrameworkTC04",
+                        "lastName": "Automation",
+                        "phoneNumber": "0201201201",
+                        "alternatePhoneNumber": "0201201202",
+                        "mobileNumber": "0611459399",
+                        "email": "RobotFrameworkTC04@tele2.com"
+                    }
+                ],
+                "place": [
+                    {
+                        "@type": "GeographicAddress",
+                        "role": "InstallationAddress",
+                        "id": "DynamicVariable.PostCode-DynamicVariable.HouseNumber",
+                        "street": "DynamicVariable.streetName",
+                        "houseNumber": "DynamicVariable.HouseNumber",
+                        "city": "DynamicVariable.cityName",
+                        "houseNumberExtension": "",
+                        "postcode": "DynamicVariable.PostCode",
+                        "country": "Netherlands"
+                    },
+                    {
+                        "@type": "AvailableFiberLine",
+                        "role": "ConnectionPoint",
+                        "id": "DynamicVariable.PostCode-DynamicVariable.HouseNumber:nvt",
+                        "street": "DynamicVariable.streetName",
+                        "houseNumber": "DynamicVariable.HouseNumber",
+                        "houseNumberExtension": "",
+                        "postcode": "DynamicVariable.PostCode",
+                        "city": "DynamicVariable.cityName",
+                        "country": "Netherlands",
+                        "connectionPointIdentifier": "nvt",
+                        "nlType": "6"
+                    }
+                ],
+                "serviceSpecification": {
+                    "name": "CFS_IP_ACCESS_WBA_FTTH"
+                }
+            }
+        },
+      {
+         "id":"2",
+         "action":"Add",
+         "service":{
+            "serviceSpecification":{
+               "name":"CFS_IP_ACCESS_CGW"
+            },
+            "serviceCharacteristic":[
+               {
+                  "name":"vendor",
+                  "valueType":"String",
+                  "value":"DynamicVariable.vendor_CGW"
+               },
+               {
+                  "name":"model",
+                  "valueType":"String",
+                  "value":"DynamicVariable.model_CGW"
+               }
+            ]
+         },
+         "orderItemRelationship":[
+            {
+               "type":"ReliesOn",
+               "id":"1"
+            }
+         ]
+      },
+      {
+         "id":"3",
+         "action":"Add",
+         "service":{
+            "serviceSpecification":{
+               "name":"CFS_IP_ACCESS_NTU"
+            },
+            "serviceCharacteristic":[
+               {
+                  "name":"vendor",
+                  "valueType":"String",
+                  "value":"DynamicVariable.vendor_NTU"
+               },
+               {
+                  "name":"model",
+                  "valueType":"String",
+                  "value":"DynamicVariable.model_NTU"
+               }
+            ]
+         },
+         "orderItemRelationship":[
+            {
+               "type":"ReliesOn",
+               "id":"1"
+          }
+         ]
+      },
+	  {
+         "id":"4",
+         "action":"Add",
+         "service":{
+            "serviceCharacteristic":[
+
+            ],
+            "serviceSpecification":{
+               "name":"CFS_INTERNET"
+            }
+         },
+         "orderItemRelationship":[
+            {
+               "type":"ReliesOn",
+               "id":"1"
+            }
+         ]
+      }
+    ]
+}

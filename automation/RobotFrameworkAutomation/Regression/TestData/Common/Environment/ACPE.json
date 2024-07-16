@@ -1,0 +1,11 @@
+{
+	"integration": {
+		"host": "http://postcodecheck.int.tele2portal.com"
+	},
+	"acceptance": {
+		"host": "http://postcodecheck.uat.tele2portal.com"
+	},
+	"api": {
+		"receiveRequest": "/api/v1/technology/availability-rest"
+	}
+}

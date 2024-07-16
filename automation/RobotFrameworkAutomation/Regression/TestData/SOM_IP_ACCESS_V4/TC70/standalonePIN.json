@@ -1,0 +1,30 @@
+{
+  "requestId": "46699133523763304696262443235032hh7mm55vv55",
+  "externalId": "40372993",
+  "description": "Service order for IP Access",
+  "relatedParty": [
+    {
+      "id": "C_19052022112501",
+      "role": "Customer",
+      "name": "Wesley B V"
+    },
+    {
+      "role": "Requester",
+      "id": "BSS-Simulator",
+      "name": "BSS Netcracker"
+    }
+  ],
+  "serviceOrderItem": [
+    {
+      "id": "5",
+      "action": "Add",
+      "service": {
+        "serviceRelationship": [ { "relationshipType": "reliesOn", "service": { "id": "45" } } ],
+        "serviceCharacteristic": [],
+              "serviceSpecification": {
+                  "name": "CFS_PIN"
+              }
+      }
+    }
+  ]
+}

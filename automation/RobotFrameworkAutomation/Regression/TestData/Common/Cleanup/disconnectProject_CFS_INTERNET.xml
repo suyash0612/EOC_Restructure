@@ -1,0 +1,26 @@
+<soapenv:Envelope
+  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <inventory.ProvisioningControllerService.dataTypes.command:designAndAssign
+      xmlns:inventory.ProvisioningControllerService.dataTypes.command="urn:com:ericsson:schema:wsdl:oss:core:nd:ws:ProvisioningControllerService:command"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:inventory.ProvisioningControllerService.dataTypes.corend="urn:com:ericsson:schema:xml:oss:core:nd:data-types:1:0"
+      xmlns:inventory.ProvisioningControllerService.dataTypes.uie="urn:com:ericsson:schema:xml:oss:core:uie:data-types:1:0"
+      xmlns:inventory.ProvisioningControllerService.dataTypes.common="urn:com:ericsson:schema:xml:granite:sdk:common:data-types:1:0"
+      xmlns:inventory.ProvisioningControllerService.v2="http://www.telcordia.com/fullfillment/platform/dto/v2" xsi:type="inventory.ProvisioningControllerService.dataTypes.command:designAndAssign_el">
+      <request xsi:type="inventory.ProvisioningControllerService.dataTypes.corend:pcDesignAssignRequest">
+        <provisioningOrder xsi:type="inventory.ProvisioningControllerService.dataTypes.corend:provisioningOrder">
+          <clientId>EOC</clientId>
+          <clientCorrelationId>150032090102784:SRV1616</clientCorrelationId>
+          <expectedCompletionDate>2020-08-21T14:07:26+02:00</expectedCompletionDate>
+          <provisioningOrderItem xsi:type="inventory.ProvisioningControllerService.dataTypes.corend:provisioningOrderItem">
+            <serviceType>ipaccess:Internet</serviceType>
+            <serviceName>SRV1616</serviceName>
+            <action>DISCONNECT</action>
+          </provisioningOrderItem>
+        </provisioningOrder>
+      </request>
+    </inventory.ProvisioningControllerService.dataTypes.command:designAndAssign>
+  </soapenv:Body>
+</soapenv:Envelope>

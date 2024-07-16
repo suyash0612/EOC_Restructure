@@ -1,0 +1,94 @@
+{
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "ext_id20232161549",
+    "description": "Service Order for WS EUA",
+    "category": "Migrate-In",
+    "relatedParty": [
+      {
+        "id": "DynamicVariable.relatedParty.customerid",
+        "role": "Customer",
+        "name": "DynamicVariable.relatedParty.customerid",
+        "ispId": "DynamicVariable.relatedParty.ispId",
+        "segment": "wholesale",
+        "@type": "organization"
+      },
+      {
+        "id": "DynamicVariable.relatedParty.requestorid",
+        "role": "Requester",
+        "name": "DynamicVariable.relatedParty.requestorid"
+      }
+    ],
+    "serviceOrderItem": [
+      {
+        "id": "1",
+        "action": "Add",
+        "service": {
+          "serviceCharacteristic": [
+            "DynamicVariable.serviceCharacteristic"
+          ],
+          "relatedParty": [
+            {
+              "@type": "ContactParty",
+              "role": "SiteContact",
+              "id": "900219552",
+              "firstName": "vpe2e",
+              "lastName": "test",
+              "phoneNumber": "0684646777",
+              "email": "vpe2etest@gmail.com"
+            }
+          ],
+          "place": [
+            "DynamicVariable.place"
+          ],
+          "serviceSpecification": {
+            "name": "CFS_ACCESS"
+          }
+        }
+      },
+      {
+        "serviceOrderItemRelationship": [
+          {
+            "relationshipType": "ReliesOn",
+            "orderItem": {
+              "itemId": "1"
+            }
+          }
+        ],
+        "service": {
+          "serviceRelationship": [
+            {
+              "relationshipType": "reliesOn",
+              "service": {
+                "id": "DynamicVariable.service.id"
+              }
+            }
+          ],
+          "serviceSpecification": {
+            "name": "CFS_P2MP_ETH_SAC_LA"
+          },
+          "serviceCharacteristic": [
+            {
+              "name": "customerConnectionTag",
+              "value": [
+                "DynamicVariable.customerConnectionTag.value"
+              ],
+              "valueType": "String"
+            },
+            {
+              "name": "bandwidthUp",
+              "valueType": "Number",
+              "value": "DynamicVariable.bandwidthUp.value"
+            },
+            {
+              "name": "bandwidthDown",
+              "valueType": "Number",
+              "value": "DynamicVariable.bandwidthUp.value"
+            }
+          ]
+        },
+        "id": 3,
+        "action": "Add"
+      }
+    ]
+  }
+   

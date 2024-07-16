@@ -1,0 +1,162 @@
+{
+    "FTTH_SD1":{
+       "Connection Point":"",
+       "PostCode":"6721 SJ",
+       "HouseNumber":"62",
+       "HouseNumberExtension":"",
+       "Access Service point":"",
+       "XDF Service ID":""  
+    },
+    "FTTH_SD2":{
+       "PostCode":"6721 GK",
+       "HouseNumber":"50",
+       "HouseNumberExtension":""
+    },
+    "FTTH_SD3":{
+       "PostCode":"6721 SR",
+       "HouseNumber":"49",
+       "HouseNumberExtension":""
+    },
+   
+    "FTTH_RD1":{
+       "PostCode":"6721 GK",
+       "HouseNumber":"50",
+       "HouseNumberExtension":""
+    },
+    "FTTH_RD2":{
+       "PostCode":"3853 AN",
+       "HouseNumber":"12",
+       "HouseNumberExtension":""
+    },
+    "FTTH_RD3":{
+       "PostCode":"7941 XT",
+       "HouseNumber":"30",
+       "HouseNumberExtension":""
+    },
+    "FTTH_RD4":{
+       "PostCode":"7161 AN",
+       "HouseNumber":"9",
+       "HouseNumberExtension":""
+    },
+    "VDSL_SD1_old":{
+       "PostCode":"1421 XT",
+       "HouseNumber":"11",
+       "HouseNumberExtension":""
+    },
+    "VDSL_SD1":{
+       "PostCode":"2014 AM",
+       "HouseNumber":"19",
+       "HouseNumberExtension":""
+    },
+    "VDSL_SD2_old":{
+       "PostCode":"6721 HX",
+       "HouseNumber":"26",
+       "HouseNumberExtension":""
+    },
+    "VDSL_SD2":{
+       "PostCode":"2014 AA",
+       "HouseNumber":"29",
+       "HouseNumberExtension":""
+    },  
+    "VDSL_SD3":{
+       "PostCode":"6721 HX",
+       "HouseNumber":"26",
+       "HouseNumberExtension":""
+    },  
+    "VDSL_RD1":{
+       "PostCode":"7625 ND",
+       "HouseNumber":"20",
+       "HouseNumberExtension":""
+    },
+    "VDSL_RD2":{
+       "PostCode":"5827 BH",
+       "HouseNumber":"3",
+       "HouseNumberExtension":""
+    },
+    "VDSL_RD2_old":{
+       "PostCode":"5827 BH",
+       "HouseNumber":"5",
+       "HouseNumberExtension":""
+    },
+    "VDSL_RD2_notworking":{
+       "PostCode":"2014 AM",
+       "HouseNumber":"3",
+       "HouseNumberExtension":""
+    },
+    "FTTH_GPON_reserved":{
+       "PostCode":"7161 AB",
+       "HouseNumber":"78",
+       "HouseNumberExtension":""
+    },
+    "FTTH_GPON_reserved1":{
+       "PostCode":"7161 AB",
+       "HouseNumber":"36",
+       "HouseNumberExtension":""
+    },
+    "FTTH_GPON_reserved2":{
+       "PostCode":"7161 AB",
+       "HouseNumber":"9",
+       "HouseNumberExtension":""
+    },
+    "FTTH_GPON_old":{
+       "PostCode":"6721 GK",
+       "HouseNumber":"45",
+       "HouseNumberExtension":""
+    },
+    "FTTH_GPON_old2":{
+       "PostCode":"7161 AC",
+       "HouseNumber":"15",
+       "HouseNumberExtension":""
+    },
+    "FTTH_GPON":{
+       "PostCode":"6833 GC",
+       "HouseNumber":"9",
+       "HouseNumberExtension":""
+    },
+    "FTTH_XGSPON_with_ONT":{
+        "PostCode":"6833 GC",
+        "HouseNumber":"9",
+        "HouseNumberExtension":""
+     },
+    "FTTH_XGSPON_New1":{
+        "PostCode":"6833 CT",
+        "HouseNumber":"5",
+        "HouseNumberExtension":""
+     },
+    "FTTH_MigrateIn":{
+       "PostCode":"6721 HX",
+       "HouseNumber":"26",
+       "HouseNumberExtension":""
+    },
+    "GoP_Reggefiber":{
+        "PostCode":"7941 XT",
+        "HouseNumber":"30",
+        "HouseNumberExtension":""
+     },
+     "GoP_VWT":{
+         "PostCode":"2565 BA",
+         "HouseNumber":"29",
+         "HouseNumberExtension":""
+      },
+      "GoP_OpenDutchFiber":{
+          "PostCode":"2724 CM",
+          "HouseNumber":"1",
+          "HouseNumberExtension":""
+       },
+       "GoP_Migrate_In":{
+        "PostCode":"2724 RC",
+        "HouseNumber":"85",
+        "HouseNumberExtension":""
+     },
+     "GoP_OpenDutchFiber2":{
+         "PostCode":"2723 AK",
+         "HouseNumber":"12",
+         "HouseNumberExtension":""
+      },
+      "GoP_Regge":{
+          "PostCode":"4041 BN",
+          "HouseNumber":"12",
+          "HouseNumberExtension":""
+       }
+   
+ }

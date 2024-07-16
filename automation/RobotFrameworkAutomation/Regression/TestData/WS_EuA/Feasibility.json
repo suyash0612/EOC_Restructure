@@ -1,0 +1,79 @@
+{
+    "description": "Service Feasibility Check",
+    "externalId": "FB100",
+    "qualificationResult": "qualified",
+    "state": "done",
+    "serviceQualificationItem": [
+        {
+            "id": "1",
+            "qualificationResult": "qualified",
+            "state": "done",
+            "service": {
+                "name": "CFS_ACCESS",
+                "serviceCharacteristic": [
+                    {
+                        "name": "bandwidthDown",
+                        "value": "10000000"
+                    },
+                    {
+                        "name": "bandwidthUp",
+                        "value": "10000000"
+                    },
+                    {
+                        "name": "activeOperator",
+                        "value": "GOP"
+                    },
+                    {
+                        "name": "passiveOperator",
+                        "value": "OPENDUTCHFIBER"
+                    },
+                    {
+                        "name": "technology",
+                        "value": "XGSPON"
+                    },
+                    {
+                        "name": "accessMethod",
+                        "value": "FTTH"
+                    }
+                ],
+                "place": [
+                    {
+                        "role": "installationAddress",
+                        "@type": "GeographicAddress",
+                        "postcode": "2724 CM",
+                        "houseNumber": "1",
+                        "houseNumberExtension": null,
+                        "street": "Zalmsloot",
+                        "city": "ZOETERMEER",
+                        "country": "NLD",
+                        "nlType": null
+                    },
+                    {
+                        "role": "alternateInstallationAddress",
+                        "@type": "GeographicAddress",
+                        "postcode": "2724 CM",
+                        "houseNumber": "1",
+                        "houseNumberExtension": "",
+                        "street": "Zalmsloot",
+                        "city": "ZOETERMEER",
+                        "country": "NLD",
+                        "nlType": null
+                    },
+                    {
+                        "role": "connectionPointOption",
+                        "@type": "AvailableFiberLine",
+                        "postcode": "2724 CM",
+                        "houseNumber": "1",
+                        "houseNumberExtension": "",
+                        "street": "Zalmsloot",
+                        "city": "ZOETERMEER",
+                        "country": "NLD",
+                        "connectionPointIdentifier": "nvt",
+                        "nlType": "NL6",
+                        "expectedDeliveryDays": "5"
+                    }
+                ]
+            }
+        }
+    ]
+}

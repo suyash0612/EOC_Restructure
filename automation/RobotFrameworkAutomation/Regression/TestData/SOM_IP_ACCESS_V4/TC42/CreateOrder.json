@@ -1,0 +1,29 @@
+{
+	"requestId": "DynamicVariable.RequestID",
+	"externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+	"description": "Service order to delete Plume Customer",
+	"relatedParty": [
+		{
+			"id": "CustomerTC40",
+			"role": "Customer",
+			"name": "IP Access Robot Framework TC40"
+		},
+		{
+			"id": "BSS-Simulator",
+			"role": "Requester",
+			"name": "BSS Netcracker Integration Environment"
+		}
+	],
+	"serviceOrderItem": [
+		{
+			"id": "1",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdWifiCustomer",
+				"serviceSpecification":{
+            		"name":"CFS_MULTI_ROOM_WIFI_CUSTOMER"
+            	}
+			}
+		}
+	]
+}

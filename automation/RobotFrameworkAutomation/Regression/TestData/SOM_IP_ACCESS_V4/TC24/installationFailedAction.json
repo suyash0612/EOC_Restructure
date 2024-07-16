@@ -1,0 +1,9 @@
+{
+	"actionName":"installationFailed",
+	"data":{
+		"reasonCode":"1504",
+		"reasonDescription":"KPN Connection delivered on wrong ISRA",
+		"domain":"EOC",
+		"note":""
+	}
+}

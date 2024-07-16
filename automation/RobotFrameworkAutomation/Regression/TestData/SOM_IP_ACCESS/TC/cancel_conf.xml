@@ -1,0 +1,26 @@
+<bsacancelconfirm>
+	<messageheader>
+		<originator>BUBN</originator>
+		<recipient>BBPP</recipient>
+		<messagetype>CANCEL_CONF</messagetype>
+		<messageversion>42</messageversion>
+		<timestamp>20190902131723</timestamp>
+	</messageheader>
+	<messagebody>
+		<generalinfo>
+			<order-id>WO0000026928014</order-id>
+			<order-id-wso>DynamicVariable.wsoId</order-id-wso>
+			<original-wso-wo-id>74672602</original-wso-wo-id>
+			<orderreceivedatetime>20191129</orderreceivedatetime>
+		</generalinfo>
+		<planninginfo>
+			<actual-ocd>20200309</actual-ocd>
+		</planninginfo>
+		<orderinfo>
+			<order-type>Cancel</order-type>
+		</orderinfo>
+		<errorinfo>
+			<errorcode>0</errorcode>
+		</errorinfo>
+	</messagebody>
+</bsacancelconfirm>

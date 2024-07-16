@@ -1,0 +1,7 @@
+{
+	"actionName": "testFailed", 
+	"data": {
+		"reasonCode": "1208",
+		"reasonDescription": "Not working"
+	}
+}

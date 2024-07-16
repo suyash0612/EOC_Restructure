@@ -1,0 +1,21 @@
+{
+    "eventId": 2104,
+    "eventTime": "",
+    "eventType": "AppointmentAttributeValueChangeEvent",
+    "event": {
+        "appointment": {
+            "id": "",
+            "href": "",
+            "description": "",
+            "externalId": "150068955133790",
+            "status": "accepted",
+            "creationDate": "2022-11-22T11:35:17.000Z",
+            "lastUpdate": "2022-11-22T11:35:17.000Z",
+            "validFor": {
+                "startDateTime": "2022-12-02T08:00:00.000Z",
+                "endDateTime": "2022-12-02T12:00:00.000Z"
+            }
+        }
+    },
+    "eventDescription": "Appointment update"
+}

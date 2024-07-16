@@ -1,0 +1,12 @@
+{
+	"integration": {
+		"host": "https://tss.int.tele2.nl"
+	},
+	"acceptance": {
+		"host": "https://tss.uat.tele2.nl"
+	},
+	"api": {
+		"login": "plume-multi-room-wifi/api/Customers/login",
+		"customer": "plume-multi-room-wifi/api/Customers"
+	}
+}

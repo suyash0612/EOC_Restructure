@@ -1,0 +1,46 @@
+{
+    "local": {
+        "host": "http://localhost:8081",
+        "auth": "dXBhZG1pbjp1cGFkbWlu",
+        "database": {
+            "application": "ORACLE",
+            "name": "orcl",
+            "host": "localhost",
+            "port": "1521",
+            "user": "EOC20",
+            "password": "EOC20"
+        }
+    },
+    "integration": {
+        "host": "https://eoc.int.itservices.lan",
+        "auth": "c3ZjX2NvbXVzZXI6ZXFDU0NxPmU4Iw==",
+        "database": {
+            "application": "EDB",
+            "name": "eocdb2",
+            "host": "10.205.8.238",
+            "port": "5444",
+            "user": "eoc",
+            "password": "EOC"
+        },
+        "om_dashboard": {
+        "username": "svc_comuser",
+        "password": "eqCSCq>e8#"
+        }
+    },
+    "acceptance": {
+        "host": "https://eoc.uat.itservices.lan",
+        "auth": "c3ZjX2NvbXVzZXI6ZXFDU0NxPmU4Iw==",
+        "database": {
+            "application": "EDB",
+            "name": "eocdb",
+            "host": "osseocdb.uat.itservices.lan",
+            "port": "5444",
+            "user": "dbu_osseoc",
+            "password": "Phah6theezae"
+        },
+        "om_dashboard": {
+        "username": "svc_comuser",
+        "password": "eqCSCq>e8#"
+        }
+    }  
+}

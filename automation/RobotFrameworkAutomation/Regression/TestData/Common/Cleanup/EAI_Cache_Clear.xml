@@ -1,0 +1,5 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:com:ericsson:schema:xml:granite:sdk:common:data-types:1:0" xmlns:urn1="urn:com:ericsson:schema:wsdl:oss:core:framework:ws:CacheService:command">
+   <soapenv:Body>
+      <urn1:clearAllCaches/>
+   </soapenv:Body>
+</soapenv:Envelope>

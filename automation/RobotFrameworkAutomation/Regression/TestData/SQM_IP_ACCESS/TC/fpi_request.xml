@@ -1,0 +1,18 @@
+<bsafpirequest>
+	<messageheader>
+		<originator>VTEL</originator>
+		<recipient>BUBN</recipient>
+		<messagetype>FPI_WSO</messagetype>
+		<messageversion>26</messageversion>
+		<timestamp>20200915031259</timestamp>
+	</messageheader>
+	<messagebody>
+		<requested-housenumber>DynamicVariable.HouseNumber</requested-housenumber>
+		<requested-housenrext>DynamicVariable.HousenumberExtension</requested-housenrext>
+		<requested-zipcode>DynamicVariable.PostCode</requested-zipcode>
+		<connectionpointnumber/>
+		<fiber-terminationpoint-id/>
+		<xdf-access-serviceid/>
+		<service-group/>
+	</messagebody>
+</bsafpirequest>

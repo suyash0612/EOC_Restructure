@@ -1,0 +1,7 @@
+{
+	"actionName": "complete", 
+	"data": {
+		"measuredBandwidthUp": 50000, 
+		"measuredBandwidthDown": 100000
+	}
+}

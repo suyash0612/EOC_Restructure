@@ -1,0 +1,9 @@
+{
+	"actionName":"noAppointment",
+	"data":{
+		"reasonCode":"1401",
+		"reasonDescription":"Site contact person not reachable by phone",
+		"domain":"EOC",
+		"note":""
+	}
+}

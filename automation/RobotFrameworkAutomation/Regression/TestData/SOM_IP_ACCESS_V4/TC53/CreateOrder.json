@@ -1,0 +1,230 @@
+{
+   "requestId":"DynamicVariable.RequestID",
+   "externalId":"EXT_ID_IPA_DynamicVariable.tcName",
+   "description":"Service order for IP Access with Mobile Backup",
+   "relatedParty":[
+      {
+         "id":"CustomerTC53",
+         "role":"Customer",
+         "name":"IP Access Robot Framework TC53"
+      },
+      {
+         "id":"BSS-Simulator",
+         "role":"Requester",
+         "name":"BSS Netcracker Integration Environment"
+      }
+   ],
+   "serviceOrderItem":[
+      {
+         "id":"1",
+         "action":"Add",
+         "service":{
+            "serviceSpecification":{
+               "name":"CFS_IP_ACCESS_WBA_VDSL"
+            },
+            "relatedParty":[
+               {
+                  "@type":"ContactParty",
+                  "role":"SiteContact",
+                  "id":"C_12345678",
+                  "firstName":"IP_ACCESS_RobotFrameworkTC53",
+                  "lastName":"Automation",
+                  "mobileNumber":"0611459399",
+                  "phoneNumber":"0201201201",
+                  "alternatePhoneNumber":"0201201202",
+                  "email":"RobotFrameworkTC53@tele2.com"
+               }
+            ],
+            "serviceCharacteristic":[
+               {
+                  "name":"promisedBandwidthDown",
+                  "valueType":"Number",
+                  "value":"DynamicVariable.promisedBandwidthDown"
+               },
+               {
+                  "name":"promisedBandwidthUp",
+                  "valueType":"Number",
+	                  "value":"DynamicVariable.promisedBandwidthUp"
+               },
+               {
+                  "name":"serviceBandwidthDown",
+                  "valueType":"Number",
+                  "value":"DynamicVariable.serviceBandwidthDown"
+               },
+               {
+                  "name":"serviceBandwidthUp",
+                  "valueType":"Number",
+                  "value":"DynamicVariable.serviceBandwidthUp"
+               },
+               {
+                  "name":"minimumBandwidthDown",
+                  "valueType":"Number",
+                  "value":"DynamicVariable.minimumBandwidthDown"
+               },
+               {
+                  "name":"minimumBandwidthUp",
+                  "valueType":"Number",
+                  "value":"DynamicVariable.minimumBandwidthUp"
+               },
+               {
+                  "name":"installationType",
+                  "valueType":"String",
+                  "value":"Engineer"
+               },
+               {
+                  "name":"sla",
+                  "valueType":"String",
+                  "value":"Standard"
+               }
+            ],
+            "place":[
+               {
+                  "@type":"GeographicAddress",
+                  "role":"InstallationAddress",
+                  "id":"DynamicVariable.PostCode-DynamicVariable.HouseNumber",
+                  "alias":"Tele2 Premises Diemen",
+                  "street":"Jan van Galenstraat",
+                  "houseNumber":"DynamicVariable.HouseNumber",
+                  "houseNumberExtension":"",
+                  "postcode":"DynamicVariable.PostCode",
+                  "city":"Haarlem",
+                  "country":"Netherlands"
+               },
+               {
+                  "@type":"AvailableCopperLine",
+                  "role":"ConnectionPoint",
+                  "id":"DynamicVariable.PostCode-DynamicVariable.HouseNumber:DynamicVariable.ConnectionPointIdentifier",
+                  "postcode":"DynamicVariable.PostCode",
+                  "houseNumber":"DynamicVariable.HouseNumber",
+                  "houseNumberExtension":"",
+                  "connectionPointIdentifier":"DynamicVariable.ConnectionPointIdentifier",
+                  "nlType":"1",
+                  "city":"Haarlem",
+                  "country":"Netherlands"
+               }
+            ]
+         }
+      },
+      {
+         "id":"2",
+         "action":"Add",
+         "service":{
+            "serviceSpecification":{
+               "name":"CFS_IP_ACCESS_CGW"
+            },
+            "serviceCharacteristic":[
+               {
+                  "name":"vendor",
+                  "valueType":"String",
+                  "value":"DynamicVariable.vendor_CGW"
+               },
+               {
+                  "name":"model",
+                  "valueType":"String",
+                  "value":"DynamicVariable.model_CGW"
+               }
+            ]
+         },
+         "serviceOrderItemRelationship":[
+            {
+                   "orderItem": {
+                       "itemId": "1"
+                   },
+                   "relationshipType": "ReliesOn"
+               }
+         ]
+      },
+      {
+         "id":"3",
+         "action":"Add",
+         "service":{
+            "serviceSpecification":{
+               "name":"CFS_IP_ACCESS_NTU"
+            },
+            "serviceCharacteristic":[
+               {
+                  "name":"vendor",
+                  "valueType":"String",
+                  "value":"DynamicVariable.vendor_NTU"
+               },
+               {
+                  "name":"model",
+                  "valueType":"String",
+                  "value":"DynamicVariable.model_NTU"
+               }
+            ]
+         },
+         "serviceOrderItemRelationship":[
+             {
+                   "orderItem": {
+                       "itemId": "1"
+                   },
+                   "relationshipType": "ReliesOn"
+               }
+         ]
+      },
+	  {
+         "id":"4",
+         "action":"Add",
+         "service":{
+            "serviceCharacteristic":[
+
+            ],
+            "serviceSpecification":{
+               "name":"CFS_INTERNET"
+            }
+         },
+         "serviceOrderItemRelationship":[
+            {
+                   "orderItem": {
+                       "itemId": "1"
+                   },
+                   "relationshipType": "ReliesOn"
+               }
+         ]
+      },
+       {
+         "id":"5",
+         "action":"Add",
+         "service":{
+            "relatedParty":[
+               {
+                  "@type":"ContactParty",
+                  "role":"SiteContact",
+                  "id":"C_12345678",
+                  "firstName":"IP_ACCESS_RobotFrameworkTC53",
+                  "lastName":"Automation",
+                  "mobileNumber":"0611459399",
+                  "phoneNumber":"0201201201",
+                  "alternatePhoneNumber":"0201201202",
+                  "email":"RobotFrameworkTC53@tele2.com"
+               }
+            ],
+            "place":[
+               {
+                  "@type":"GeographicAddress",
+                  "role":"InstallationAddress",
+                  "id":"DynamicVariable.PostCode-DynamicVariable.HouseNumber",
+                  "alias":"Tele2 Premises Diemen",
+                  "street":"Jan van Galenstraat",
+                  "houseNumber":"DynamicVariable.HouseNumber",
+                  "houseNumberExtension":"",
+                  "postcode":"DynamicVariable.PostCode",
+                  "city":"Haarlem",
+                  "country":"Netherlands"
+               }
+               ],
+            "serviceSpecification":{
+               "name":"CFS_IP_ACCESS_MOBILE_BACKUP"
+            }
+         },
+         "serviceOrderItemRelationship":[
+            {
+                   "orderItem": {
+                       "itemId": "1"
+                   },
+                   "relationshipType": "ReliesOn"
+               }]
+      }
+   ]
+}

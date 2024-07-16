@@ -1,0 +1,17 @@
+<bsacarrierinforequest>
+	<messageheader>
+		<originator>VTEL</originator>
+		<recipient>BUBN</recipient>
+		<messagetype>CARRIER_INFO_WSO</messagetype>
+		<messageversion>46</messageversion>
+		<timestamp>20190617080334</timestamp>
+	</messageheader>
+	<messagebody>
+		<physical-carrier/>
+		<enduserinfo>
+			<requested-housenumber>DynamicVariable.HouseNumber</requested-housenumber>
+			<requested-housenrext>DynamicVariable.HousenumberExtension</requested-housenrext>
+			<requested-zipcode>DynamicVariable.PostCode</requested-zipcode>
+		</enduserinfo>
+	</messagebody>
+</bsacarrierinforequest>

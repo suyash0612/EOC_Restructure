@@ -1,0 +1,27 @@
+{
+  "resourceType": "order",
+  "eventId": "1110",
+  "eventDescription": "Mobile Service Activation Request",
+  "eventType": "ServiceOrderStateChangeNotification",
+  "eventTime": "2021-02-04T11:46:10.886Z",
+  "event": {
+    "serviceOrder": {
+      "id": "140048035101039",
+      "orderItem": [
+        {
+          "id": "BSSID005",
+          "state": "Completed",
+          "service": {
+			"id": "DynamicVariable.CFS_IP_ACCESS_MOBILE_BACKUP_ID",
+			"serviceCharacteristic": [
+				{
+                  "name":"msisdn",
+                  "valueType":"String",
+                  "value":"3197432423423"
+				}
+			]
+          }
+		}]
+	}
+  }
+}

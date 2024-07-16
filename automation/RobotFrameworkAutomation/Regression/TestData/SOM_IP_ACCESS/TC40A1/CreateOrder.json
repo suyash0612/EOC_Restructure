@@ -1,0 +1,84 @@
+{
+   "externalId": "196560351",
+   "orderItem": [
+     {
+       "id": "WiFi Location-c6ebeb16-8191-4559-88db-8b52e1195ba7-modify",
+       "action": "modify",
+       "service": {
+         "id": "DynamicVariable.WIFI_LOCATION",
+         "serviceCharacteristic": [
+           {
+             "name": "numberOfPods",
+             "value": [
+               6
+             ],
+             "valueType": "number"
+           },
+           {
+             "name": "installationType",
+             "value": [
+               "Engineer"
+             ],
+             "valueType": "string"
+           }
+         ],
+         "serviceSpecification": {
+           "id": "CFS_MULTI_ROOM_WIFI_LOCATION",
+           "name": "CFS_MULTI_ROOM_WIFI_LOCATION",
+           "version": "1.0"
+         },
+         "relatedParty": [
+           {
+                  "@type":"ContactParty",
+                  "role":"SiteContact",
+                  "id":"C_12345678",
+                  "firstName":"IP_ACCESS_RobotFrameworkTC40A1190707",
+                  "lastName":"Automation",
+                  "mobileNumber":"0611459318",
+                  "phoneNumber":"0201201208",
+                  "alternatePhoneNumber":"0201201276",
+                  "email":"RobotFrameworkTC40A190707@tele2.com"
+           }
+         ],
+         "place": [
+           {
+            "@type":"GeographicAddress",
+            "role":"InstallationAddress",
+            "id":"DynamicVariable.PostCode-DynamicVariable.HouseNumber",
+            "alias":"Tele2 Premises Diemen",
+            "street":"Jan van Galenstraat",
+            "houseNumber":"DynamicVariable.HouseNumber",
+            "houseNumberExtension":"",
+            "postcode":"DynamicVariable.PostCode",
+            "city":"Haarlem",
+            "country":"Netherlands"
+           }
+         ],
+         "orderItemRelationship": [
+           {
+                "type":"ReliesOn",
+                "id":"DynamicVariable.cgw"
+             },
+           {
+                "type":"ReliesOn",
+                "id":"DynamicVariable.WIFI_CUSTOMER"
+             }
+         ]
+       }
+     }
+   ],
+   "relatedParty": [
+      {
+          "id":"DynamicVariable.customerId",
+          "role":"Customer",
+          "name":"DynamicVariable.customerName"
+       },
+       {
+          "id":"BSS-Simulator",
+          "role":"Requester",
+          "name":"BSS Netcracker Integration Environment"
+       }
+   ],
+   "requestId": "DynamicVariable.RequestID"
+ }
+ 

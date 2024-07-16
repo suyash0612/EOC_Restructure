@@ -1,0 +1,20 @@
+{"Zipcode": "DynamicVariable.Zipcode",
+    "HouseNumber":"DynamicVariable.HouseNumber",
+    "HouseNumberSuffix": "DynamicVariable.Extension",
+    "AccessSuppliers": [
+         "KPN",
+    "EUROFIBER"
+    ],
+    "NetworkTypes": [
+        "VDSL CO",
+        "VVDSL CO",
+        "VDSL BR ASYM",
+        "VVDSL BR ASYM",
+        "FTTH",
+        "FTTx"
+    ],
+    "TechnologyTypes": ["DynamicVariable.TechnologyTypes"],
+    "lineInformation":true,
+    "realCheckSuppliers": true
+ 
+}

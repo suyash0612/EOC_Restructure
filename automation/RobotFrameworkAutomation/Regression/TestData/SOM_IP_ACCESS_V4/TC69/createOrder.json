@@ -1,0 +1,204 @@
+{
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+    "description": "Service order for IP Access",
+    "requestedCompletionDate": "2023-07-19T18:30:00.000Z",
+    "relatedParty": [
+        {
+            "id": "CustomerTC68",
+            "role": "Customer",
+            "name": "IP Access Robot Framework TC68"
+        },
+        {
+            "id": "BSS-Simulator",
+            "role": "Requester",
+            "name": "BSS Simulator Integration Environment"
+        }
+    ],
+    "serviceOrderItem": [
+        {
+            "id": "1",
+            "action": "Add",
+            "service": {
+                "serviceCharacteristic": [
+                    {
+                        "name": "sla",
+                        "valueType": "String",
+                        "value": "Standard"
+                    },
+                    {
+                        "name": "installationType",
+                        "valueType": "String",
+                        "value": "Engineer"
+                    },
+                    {
+                        "name": "serviceBandwidthDown",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.serviceBandwidthDown"
+                    },
+                    {
+                        "name": "serviceBandwidthUp",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.serviceBandwidthUp"
+                    },
+                    {
+                        "name": "minimumBandwidthDown",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.minimumBandwidthDown"
+                    },
+                    {
+                        "name": "minimumBandwidthUp",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.minimumBandwidthUp"
+                    },
+                    {
+                        "name": "promisedBandwidthDown",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.promisedBandwidthDown"
+                    },
+                    {
+                        "name": "promisedBandwidthUp",
+                        "valueType": "Number",
+                        "value": "DynamicVariable.promisedBandwidthUp"
+                    }
+                ],
+                "relatedParty": [
+                    {
+                        "@type": "ContactParty",
+                        "role": "SiteContact",
+                        "id": "C_1657686679065",
+                        "firstName": "IP_ACCESS_RobotFrameworkTC68",
+                        "lastName": "Automation",
+                        "phoneNumber": "0201201201",
+                        "alternatePhoneNumber": "0201201202",
+                        "mobileNumber": "0611459399",
+                        "email": "RobotFrameworkTC68@tele2.com"
+                    }
+                ],
+                "place": [
+                    {
+                        "@type": "GeographicAddress",
+                        "role": "InstallationAddress",
+                        "id": "2014 AA-29",
+                        "street": "Jan van Galenstraat",
+                        "houseNumber": "29",
+                        "houseNumberExtension": "",
+                        "postcode": "2014 AA",
+                        "city": "Haarlem",
+                        "country": "Netherlands"
+                    },
+                    {
+                        "@type": "AvailableCopperLine",
+                        "role": "ConnectionPoint",
+                        "id": "2014 AA-29:001//MTK/METERKAST",
+                        "street": "Jan van Galenstraat",
+                        "houseNumber": "29",
+                        "houseNumberExtension": "",
+                        "postcode": "2014 AA",
+                        "city": "Haarlem",
+                        "country": "Netherlands",
+                        "connectionPointIdentifier": "001//MTK/METERKAST",
+                        "nlType": "1"
+                    }
+                ],
+                "serviceSpecification": {
+                    "name": "CFS_IP_ACCESS_WBA_VDSL"
+                }
+            }
+        },
+        {
+            "id": "2",
+            "action": "Add",
+            "service": {
+                "serviceCharacteristic": [],
+                "serviceSpecification": {
+                    "name": "CFS_INTERNET"
+                }
+            },
+            "serviceOrderItemRelationship": [
+               {
+                   "orderItem": {
+                       "itemId": "1"
+                   },
+                   "relationshipType": "ReliesOn"
+               }
+            ]
+        },
+        {
+            "id": "3",
+            "action": "Add",
+            "service": {
+                "serviceCharacteristic": [
+                    {
+                        "name": "model",
+                        "valueType": "String",
+                        "value": "WAP-5951u"
+                    },
+                    {
+                        "name": "vendor",
+                        "valueType": "String",
+                        "value": "Comtrend"
+                    }
+                ],
+                "serviceSpecification": {
+                    "name": "CFS_IP_ACCESS_CGW"
+                }
+            },
+            "serviceOrderItemRelationship": [
+               {
+                   "orderItem": {
+                       "itemId": "1"
+                   },
+                   "relationshipType": "ReliesOn"
+               }
+            ]
+        },
+        {
+            "id": "4",
+            "action": "Add",
+            "service": {
+                "serviceCharacteristic": [
+                    {
+                        "name": "model",
+                        "valueType": "String",
+                        "value": "NA"
+                    },
+                    {
+                        "name": "vendor",
+                        "valueType": "String",
+                        "value": "NA"
+                    }
+                ],
+                "serviceSpecification": {
+                    "name": "CFS_IP_ACCESS_NTU"
+                }
+            },
+            "serviceOrderItemRelationship": [
+             {
+                   "orderItem": {
+                       "itemId": "1"
+                   },
+                   "relationshipType": "ReliesOn"
+               }
+            ]
+        },
+        {
+            "id": "5",
+            "action": "Add",
+            "service": {
+                "serviceCharacteristic": [],
+                "serviceSpecification": {
+                    "name": "CFS_PIN"
+                }
+            },
+            "serviceOrderItemRelationship": [
+                 {
+                   "orderItem": {
+                       "itemId": "1"
+                   },
+                   "relationshipType": "ReliesOn"
+               }
+            ]
+        }
+    ]
+}

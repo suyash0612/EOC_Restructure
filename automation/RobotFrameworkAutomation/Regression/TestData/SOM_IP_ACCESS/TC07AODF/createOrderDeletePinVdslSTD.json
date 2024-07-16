@@ -1,0 +1,26 @@
+{
+	"requestId": "DynamicVariable.RequestID",
+	"externalId": "TC07AODF",
+	"description": "Delete PIN Service from IP Access GOP",
+	"relatedParty": [
+		{
+			"id": "CustomerTC07A",
+			"role": "Customer",
+			"name": "IP Access Robot Framework TC07A"
+		},
+		{
+			"id": "BSS-Simulator",
+			"role": "Requester",
+			"name": "BSS Simulator"
+		}
+	],
+	"orderItem": [
+        {
+			"id": "5",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdPIN"
+			}
+		}
+	]
+}

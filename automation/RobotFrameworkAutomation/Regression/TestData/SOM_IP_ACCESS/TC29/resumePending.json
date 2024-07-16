@@ -1,0 +1,25 @@
+{
+    "orderItem": [
+        {
+            "id": "DynamicVariable.CFS_IP_ACCESS_VDSL_ID",
+            "service": {
+                "serviceSpecification": {
+                    "name": "CFS_IP_ACCESS_WBA_VDSL"
+                },
+                "relatedParty": [
+                    {
+                        "@type": "ContactParty",
+                        "role": "SiteContact",
+                        "id": "C_12345678",
+                        "firstName": "Jonas",
+                        "lastName": "DS",
+                        "mobileNumber": "0611459399",
+                        "phoneNumber": "0201201201",
+                        "alternatePhoneNumber": "0201201202",
+                        "email": "jonas@t-mobile.nl"
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+	"requestId": "DynamicVariable.RequestID",
+	"externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+	"description": "Service order to delete Mobile Backup",
+	"relatedParty": [
+		{
+			"id": "CustomerTC53",
+			"role": "Customer",
+			"name": "IP Access Robot Framework TC53"
+		},
+		{
+			"id": "BSS-Simulator",
+			"role": "Requester",
+			"name": "BSS Netcracker Integration Environment"
+		}
+	],
+	"orderItem": [
+		{
+			"id": "1",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdMobileBackup",
+				"serviceSpecification":{
+            		"name":"CFS_IP_ACCESS_MOBILE_BACKUP"
+            	}
+			}
+		}
+	]
+}

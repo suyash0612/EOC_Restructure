@@ -1,0 +1,47 @@
+{
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "2356",
+    "description": "Service Order for Skyfall Service with Internet Security ",
+    "relatedParty": [
+      {
+        "id": "1223545575",
+        "role": "Customer",
+        "name": "Sky Fall Customer ",
+        "customerSegment": "massMarket",
+        "@referredType": "Organization"
+      },
+      {
+        "id": "DynamicVariable.relatedParty.customerid",
+		"role": "Requester",
+		"name": "DynamicVariable.tcName"
+      }
+    ],
+    "serviceOrderItem": [
+      {
+        "id":"3",
+        "action":"add",
+        "service":{
+           "serviceCharacteristic":[
+              {
+                 "name":"securityVariant",
+                 "value":"EVO",
+                 "valueType":"string"
+              }
+           ],
+           "serviceSpecification":{
+              "id":"CFS_INTERNET_SECURITY",
+              "name":"CFS_INTERNET_SECURITY"
+           },
+           "serviceRelationship":[
+              {
+                 "service":{
+                    "id":"DynamicVariable.CFS_INTERNET_CONNECTION.srId"
+                 },
+                 "relationshipType":"dependsOn"
+              }
+           ]
+        }
+     }
+    ]
+  }
+  

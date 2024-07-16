@@ -1,0 +1,152 @@
+{
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "2355",
+    "description": "DynamicVariable.description DynamicVariable.CFS_ACCESS.srId",
+    "relatedParty": [
+      {
+        "id": "DynamicVariable.relatedParty.customerid",
+        "role": "Customer",
+        "name": "Skyfall Regression DynamicVariable.tcName",
+        "customerSegment": "massMarket",
+        "@referredType": "Organization"
+      },
+      {
+        "id": "DynamicVariable.relatedParty.requestorid",
+		    "role": "Requester",
+		    "name": "DynamicVariable.relatedParty.requestorid"
+      }
+    ],
+    "serviceOrderItem": [
+      {
+        "id": "1",
+        "action": "Add",
+        "service": {
+          "serviceCharacteristic": [
+            {
+              "name": "sla",
+              "valueType": "String",
+              "value": "DynamicVariable.sla"
+            },
+            {
+              "name": "serviceDeviceType",
+              "valueType": "String",
+              "value": "DynamicVariable.serviceDeviceType"
+            }
+          ],
+          "relatedParty": [
+            {
+              "id": "16755",
+              "name": "DynamicVariable.ServiceProvider.name",
+              "role": "ServiceProvider",
+              "@referredType": "Organization"
+            }
+          ],
+          "place": [
+            {
+              "id": "DynamicVariable.place.id",
+              "role": "DynamicVariable.place.role",
+              "city": "DynamicVariable.place.city",
+              "country": "DynamicVariable.place.country",
+              "houseNumber": "DynamicVariable.place.houseNumber",
+              "houseNumberExtension": "",
+              "street": "DynamicVariable.place.street",
+              "postcode": "DynamicVariable.place.postcode",
+              "@type": "DynamicVariable.place.@type"
+            }
+          ],
+          "serviceSpecification": {
+            "id": "CFS_INTERNET_CONNECTION",
+            "name": "CFS_INTERNET_CONNECTION"
+          }
+        },
+        "serviceOrderItemRelationship": [
+          {
+            "relationshipType": "reliesOn",
+            "orderItem": {
+              "itemId": "2"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "action": "Add",
+        "service": {
+          "serviceCharacteristic": [
+            {
+              "name": "accessMethod",
+              "value": "DynamicVariable.accessMethod",
+              "valueType": "string"
+            },
+            {
+              "name": "isPrimaryAccess",
+              "value": "DynamicVariable.isPrimaryAccess",
+              "valueType": "boolean"
+            },
+            {
+              "name": "technology",
+              "value": "DynamicVariable.technology",
+              "valueType": "string"
+            },
+            {
+              "name": "iccid",
+              "value": "DynamicVariable.iccid",
+              "valueType": "string"
+            }
+          ],
+          "serviceSpecification": {
+            "id": "CFS_ACCESS",
+            "name": "CFS_ACCESS"
+          }
+        }
+      },
+      {
+        "id": "3",
+        "action": "Add",
+        "service": {
+          "serviceCharacteristic": [
+            {
+              "name": "paymentMethod",
+              "value": "DynamicVariable.paymentMethod",
+              "valueType": "string"
+            },
+            {
+              "name": "ratePlan",
+              "value": "DynamicVariable.ratePlan",
+              "valueType": "string"
+            }
+          ],
+          "serviceSpecification": {
+            "id": "CFS_MOBILE_SUB_INFO",
+            "name": "CFS_MOBILE_SUB_INFO"
+          }
+        },
+        "serviceOrderItemRelationship": [
+          {
+            "relationshipType": "dependsOn",
+            "orderItem": {
+              "itemId": "2"
+            }
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "action": "Add",
+        "service": {
+          "serviceSpecification": {
+            "id": "CFS_INTERNET_MOBILE_FEATURES",
+            "name": "CFS_INTERNET_MOBILE_FEATURES"
+          }
+        },
+        "serviceOrderItemRelationship": [
+          {
+            "relationshipType": "dependsOn",
+            "orderItem": {
+              "itemId": "2"
+            }
+          }
+        ]
+      }
+    ]
+  }

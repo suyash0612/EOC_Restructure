@@ -1,0 +1,9 @@
+{
+	"actionName":"installationFailed",
+	"data":{
+		"reasonCode":"1503",
+		"reasonDescription":"No power supply and in-house cabling",
+		"domain":"EOC",
+		"note":""
+	}
+}

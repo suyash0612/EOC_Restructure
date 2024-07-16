@@ -1,0 +1,187 @@
+{
+   "requestId": "DynamicVariable.RequestID",
+   "externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+   "description": "Service order for IP Access",
+   "requestedCompletionDate": "2024-03-06T23:00:00.000Z",
+   "relatedParty": [
+         {
+         "id":"CustomerTC04",
+         "role":"Customer",
+         "name":"IP Access Robot Framework TC04"
+      },
+       {
+           "id": "BSS-Simulator",
+           "role": "Requester",
+           "name": "BSS Simulator Integration Environment"
+       }
+   ],
+   "serviceOrderItem": [
+       {
+           "id": "1",
+           "action": "Add",
+           "service": {
+               "serviceCharacteristic": [
+                   {
+                 "name":"promisedBandwidthDown",
+                 "valueType":"Number",
+                 "value":"DynamicVariable.promisedBandwidthDown"
+              },
+              {
+                 "name":"promisedBandwidthUp",
+                 "valueType":"Number",
+                    "value":"DynamicVariable.promisedBandwidthUp"
+              },
+              {
+                 "name":"serviceBandwidthDown",
+                 "valueType":"Number",
+                 "value":"DynamicVariable.serviceBandwidthDown"
+              },
+              {
+                 "name":"serviceBandwidthUp",
+                 "valueType":"Number",
+                 "value":"DynamicVariable.serviceBandwidthUp"
+              },
+              {
+                 "name":"minimumBandwidthDown",
+                 "valueType":"Number",
+                 "value":"DynamicVariable.minimumBandwidthDown"
+              },
+              {
+                 "name":"minimumBandwidthUp",
+                 "valueType":"Number",
+                 "value":"DynamicVariable.minimumBandwidthUp"
+              },
+              {
+                 "name":"installationType",
+                 "valueType":"String",
+                 "value":"Engineer"
+              },
+              {
+                 "name":"sla",
+                 "valueType":"String",
+                 "value":"Standard"
+              }
+               ],
+               "relatedParty": [
+                   {
+                       "@type":"ContactParty",
+                 "role":"SiteContact",
+                 "id":"C_12345678",
+                 "firstName":"IP_ACCESS_RobotFrameworkTC03",
+                 "lastName":"Automation",
+                 "mobileNumber":"0611459399",
+                 "phoneNumber":"0201201201",
+                 "alternatePhoneNumber":"0201201202",
+                 "email":"RobotFrameworkTC03@tele2.com"
+                   }
+               ],
+               "place": [
+                   {
+                 "@type":"GeographicAddress",
+                 "role":"InstallationAddress",
+                 "id":"DynamicVariable.PostCode-DynamicVariable.HouseNumber",
+                 "alias":"Tele2 Premises Diemen",
+                 "street": "DynamicVariable.streetName",
+                 "houseNumber":"DynamicVariable.HouseNumber",
+                 "houseNumberExtension":"",
+                 "postcode":"DynamicVariable.PostCode",
+                 "city":"DynamicVariable.cityName",
+                 "country":"Netherlands"
+              },
+              {
+                 "@type":"AvailableCopperLine",
+                 "role":"ConnectionPoint",
+                 "id":"DynamicVariable.PostCode-DynamicVariable.HouseNumber:DynamicVariable.ConnectionPointIdentifier",
+                 "postcode":"DynamicVariable.PostCode",
+                 "houseNumber":"DynamicVariable.HouseNumber",
+                 "houseNumberExtension":"",
+                 "connectionPointIdentifier":"DynamicVariable.ConnectionPointIdentifier",
+                 "nlType":"1",
+                 "street": "DynamicVariable.streetName",
+                 "city":"DynamicVariable.cityName",
+                 "country":"Netherlands"
+              }
+               ],
+               "serviceSpecification": {
+                   "name": "CFS_IP_ACCESS_WBA_VDSL"
+               }
+           }
+       },
+       {
+           "id": "2",
+           "action": "Add",
+           "service": {
+               "serviceCharacteristic": [],
+               "serviceSpecification": {
+                   "name": "CFS_INTERNET"
+               }
+           },
+           "serviceOrderItemRelationship": [
+               {
+                   "orderItem": {
+                       "itemId": "1"
+                   },
+                   "relationshipType": "ReliesOn"
+               }
+           ]
+       },
+       {
+           "id": "3",
+           "action": "Add",
+           "service": {
+               "serviceCharacteristic": [
+                   {
+                 "name":"vendor",
+                 "valueType":"String",
+                 "value":"DynamicVariable.vendor_CGW"
+              },
+              {
+                 "name":"model",
+                 "valueType":"String",
+                 "value":"DynamicVariable.model_CGW"
+              }
+               ],
+               "serviceSpecification": {
+                   "name": "CFS_IP_ACCESS_CGW"
+               }
+           },
+           "serviceOrderItemRelationship": [
+               {
+                   "orderItem": {
+                       "itemId": "1"
+                   },
+                   "relationshipType": "ReliesOn"
+               }
+           ]
+       },
+       {
+           "id": "4",
+           "action": "Add",
+           "service": {
+               "serviceCharacteristic": [
+                   {
+                 "name":"vendor",
+                 "valueType":"String",
+                 "value":"DynamicVariable.vendor_NTU"
+              },
+              {
+                 "name":"model",
+                 "valueType":"String",
+                 "value":"DynamicVariable.model_NTU"
+              }
+               ],
+               "serviceSpecification": {
+                   "name": "CFS_IP_ACCESS_NTU"
+               }
+           },
+           "serviceOrderItemRelationship": [
+               {
+                   "orderItem": {
+                       "itemId": "1"
+                   },
+                   "relationshipType": "ReliesOn"
+               }
+           ]
+       }
+   ]
+}

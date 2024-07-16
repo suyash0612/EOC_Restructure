@@ -1,0 +1,13 @@
+{
+	"integration": {
+		"host": "http://mw.int.itservices.lan:5180",
+		"auth": "YXBwLWVvYzphcHAtZW9j"
+	},
+	"acceptance": {
+		"host": "http://mw.uat.itservices.lan:5180",
+		"auth": "YXBwLWVvYzp4WWFBOXVScG5zM2h4Q044dTVGdg=="
+	},
+	"api": {
+		"receiveRequest": "/invoke/VTEOC.Incoming.Flows.WBA:receiveRequest"
+	}
+}

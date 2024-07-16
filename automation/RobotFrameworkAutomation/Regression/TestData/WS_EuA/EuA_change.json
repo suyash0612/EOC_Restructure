@@ -1,0 +1,57 @@
+{
+    "externalId": "DynamicVariable.RequestID",
+    "serviceOrderItem": [
+      {
+        "id": "P2MP Ethernet Local Access Configuration-0d2a6153-e1fb-42f2-b38f-c2401f849cde-modify",
+        "action": "modify",
+        "service": {
+          "id": "DynamicVariable.service.id",
+          "state": "Active",
+          "serviceCharacteristic": [
+            {
+                "name": "customerConnectionTag",
+                "value": [
+                  "DynamicVariable.customerConnectionTag.value"
+                ],
+                "valueType": "String"
+              },
+              {
+                "name": "bandwidthUp",
+                "valueType": "Number",
+                "value": "DynamicVariable.bandwidthUp.value"
+              },
+              {
+                "name": "bandwidthDown",
+                "valueType": "Number",
+                "value": "DynamicVariable.bandwidthUp.value"
+              }
+          ],
+          "serviceSpecification": {
+            "id": "CFS_P2MP_ETH_SAC_LA",
+            "name": "CFS_P2MP_ETH_SAC_LA",
+            "version": "1.0"
+          }
+        }
+      }
+    ],
+    "relatedParty": [
+      {
+        "id": "DynamicVariable.relatedParty.customerid",
+        "href": "https://public-gateway-staging-bss-netcracker.aws-eks01.nccloud-s.aws-tmnl.local/cim-tmf-service/customerManagement/customer/0013G00000RMDGzQAP",
+        "name": "DynamicVariable.relatedParty.customerid",
+        "role": "Customer",
+        "businessSegment": "WHS",
+        "ispId": "DynamicVariable.relatedParty.ispId",
+        "@referredType": "Customer"
+      },
+      {
+        "id": "BSS-Simulator",
+        "name": "BSS-Simulator",
+        "role": "Requester"
+      }
+    ],
+    "catalogVersion": "release_2301",
+    "orderExternalId": "195027228",
+    "companyName": "Pap Schilderwerken",
+    "requestId": "DynamicVariable.RequestID"
+  }

@@ -1,0 +1,9 @@
+{
+	"actionName":"noAppointment",
+	"data":{
+		"reasonCode":"1404",
+		"reasonDescription":"Site contact person unaware of the order",
+		"domain":"EOC",
+		"note":""
+	}
+}

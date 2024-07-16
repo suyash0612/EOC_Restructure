@@ -1,0 +1,47 @@
+{
+	"requestId": "DynamicVariable.RequestID",
+	"externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+	"description": "Delete Service order for IP Access FTTH Mobile Backup",
+	"relatedParty": [
+		{
+			"id": "CustomerTC09AODF",
+			"role": "Customer",
+			"name": "IP Access Robot Framework TC09AODF"
+		},
+		{
+			"id": "BSS-Simulator",
+			"role": "Requester",
+			"name": "BSS Simulator"
+		}
+	],
+	"ServiceOrderItem": [
+		{
+			"id": "1",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdInternet"
+			}
+		},
+		{
+			"id": "2",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdFTTH"
+			}
+		},
+		{
+			"id": "3",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdCGW"
+			}
+		},
+		{
+			"id": "4",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdMobileBackup"
+			}
+		}
+	]
+}

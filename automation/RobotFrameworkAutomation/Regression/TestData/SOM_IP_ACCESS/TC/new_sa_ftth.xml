@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bsaserviceanswer>
+  <messageheader>
+    <originator>BUBN</originator> 
+    <recipient>VTEL</recipient> 
+    <messagetype>NEW_SA</messagetype> 
+    <messageversion>58</messageversion> 
+    <timestamp>20220704115006</timestamp>
+  </messageheader> 
+  <messagebody>
+    <generalinfo>
+      <order-id>P2007041147376259</order-id> 
+      <order-id-wso>DynamicVariable.wsoId</order-id-wso> 
+      <custwishdate/> 
+      <orderreceivedatetime>20200704114707</orderreceivedatetime> 
+      <reply-tag/>
+    </generalinfo> 
+    <actualuserinfo>
+      <housenumber>12</housenumber> 
+      <housenrext/> 
+      <zipcode>3853AN</zipcode> 
+      <street>Meerkoetstraat</street> 
+      <city>Ermelo</city> 
+      <eapid>SG-20006575</eapid> 
+      <service-group>DynamicVariable.serviceGroup</service-group> 
+      <planned-isra-specs/> 
+      <planned-fiber-terminationpoint-id/> 
+      <planned-isra-pin-1/> 
+      <planned-isra-pin-2/>
+    </actualuserinfo> 
+    <phoneinfo>
+      <requested-phonenumber/> 
+      <main-phonenumber/>
+    </phoneinfo> 
+    <orderinfo>
+      <order-type>New Access</order-type> 
+      <order-scenario>New Line</order-scenario> 
+      <order-variant/> 
+      <line-test-and-label>false</line-test-and-label> 
+      <outlet-required>false</outlet-required> 
+      <nl-type>6</nl-type> 
+      <nt-service-provider/> 
+      <appointment-id/> 
+      <appointment-activity-type/> 
+      <appointment-activity-feedback>PATCHING BY WBA</appointment-activity-feedback> 
+      <delivery-scenario>Patched</delivery-scenario>
+    </orderinfo> 
+    <distributionpointinfo>
+      <access-area-id>AA/86</access-area-id>
+    </distributionpointinfo> 
+    <planninginfo>
+       <planned-tcd>DynamicVariable.tcd</planned-tcd>
+       <planned-ocd>DynamicVariable.ocd</planned-ocd>
+    </planninginfo> 
+    <accesselements>
+      <access-instance-id>AI-20007487/1</access-instance-id> 
+      <xdf-access-serviceid/> 
+      <additional-xdf-access-serviceid/> 
+      <carrier-vendor-id>REGG</carrier-vendor-id> 
+      <carrier-type>Fiber</carrier-type> 
+      <technology-type>GoF</technology-type> 
+      <nt-type/> 
+      <nt-serial-number/> 
+      <quality-class>INP 0</quality-class>
+    </accesselements> 
+    <servicelevelelements>
+      <sla-name>Office hours</sla-name>
+    </servicelevelelements> 
+    <serviceinfo>
+      <serviceelement>
+        <nt-port-number/> 
+        <nt-port-type/> 
+        <service-instance-id>SI-20013996</service-instance-id> 
+        <service-type-id>7396</service-type-id> 
+        <service-class>E2E</service-class> 
+        <e2einfo>
+          <transport-instance-id>TI-VTEL/4</transport-instance-id> 
+          <eap-vlan-id>32</eap-vlan-id> 
+          <wap-area>WA-VTEL/66</wap-area> 
+          <wap-vlan-id>2486</wap-vlan-id> 
+          <customer-connection-tag>DynamicVariable.serviceCustomerConnectionTag</customer-connection-tag>
+        </e2einfo>
+      </serviceelement>
+    </serviceinfo> 
+    <errorinfo>
+      <errorcode>0</errorcode> 
+      <comment>9342</comment> 
+      <order-note/>
+    </errorinfo>
+  </messagebody>
+</bsaserviceanswer>

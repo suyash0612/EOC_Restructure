@@ -1,0 +1,64 @@
+<bsareadyforservice>
+  <messageheader>
+    <originator>BUBN</originator>
+    <recipient>VTEL</recipient>
+    <messagetype>NEW_RFS</messagetype>
+    <messageversion>54</messageversion>
+    <timestamp>20190219120721</timestamp>
+  </messageheader>
+  <messagebody>
+    <generalinfo>
+      <order-id>WO0000024523525</order-id>
+      <order-id-wso>DynamicVariable.wsoId</order-id-wso>
+      <custwishdate>20190218</custwishdate>
+      <orderreceivedatetime>20190130124232</orderreceivedatetime>
+    </generalinfo>
+    <actualuserinfo>
+      <eapid>EAP/7447178</eapid>
+      <service-group>DynamicVariable.serviceGroup</service-group>
+      <actual-isra-specs>001/B/MTK/METERKAST</actual-isra-specs>
+    </actualuserinfo>
+    <phoneinfo/>
+    <orderinfo>
+      <order-type>New Access</order-type>
+      <order-scenario>New Line</order-scenario>
+      <line-test-and-label>true</line-test-and-label>
+      <outlet-required>false</outlet-required>
+      <nl-type>1</nl-type>
+    </orderinfo>
+    <planninginfo>
+      <actual-tcd>20220406</actual-tcd>
+      <actual-ocd>20220409</actual-ocd>
+    </planninginfo>
+    <accesselements>
+      <access-instance-id>AI-7447178/1</access-instance-id>
+      <xdf-access-serviceid>CGX04047</xdf-access-serviceid>
+      <portfolio-id>DLM-WD</portfolio-id>
+      <package-id>75010</package-id>
+      <reliability>99</reliability>
+      <carrier-type>Copper_only</carrier-type>
+	  <carrier-vendor-id>MDF</carrier-vendor-id>
+      <technology-type>VVDSL2_POTS</technology-type>
+      <access-class>E2E</access-class>
+      <quality-class>SC</quality-class>
+    </accesselements>
+    <servicelevelelements>
+      <sla-name>Office hours</sla-name>
+    </servicelevelelements>
+    <serviceinfo>
+      <serviceelement>
+        <service-instance-id>SI-7447178/1</service-instance-id>
+        <service-type-id>8184</service-type-id>
+        <service-class>E2E VPN</service-class>
+        <e2evpninfo>
+          <eap-vlan-id>309</eap-vlan-id>
+          <wapid>TEL2/147</wapid>
+          <wap-vlan-id>13</wap-vlan-id>
+        </e2evpninfo>
+      </serviceelement>
+    </serviceinfo>
+    <errorinfo>
+      <errorcode>0</errorcode>
+    </errorinfo>
+  </messagebody>
+</bsareadyforservice>

@@ -1,0 +1,1 @@
+update cwpc_basketitem set data='{"DynamicLeaves": {"username":"25936960@IPAccess.net","qos_profile":"20m-shaping"}}' where basketid=70024285101276 and itemcode ='RES_IAR_QOS_SHAPING';

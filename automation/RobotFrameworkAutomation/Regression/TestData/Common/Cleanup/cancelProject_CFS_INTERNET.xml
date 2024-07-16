@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <inventory.ProvisioningControllerService.dataTypes.command:cancel xmlns:inventory.ProvisioningControllerService.dataTypes.command="urn:com:ericsson:schema:wsdl:oss:core:nd:ws:ProvisioningControllerService:command" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:inventory.ProvisioningControllerService.dataTypes.corend="urn:com:ericsson:schema:xml:oss:core:nd:data-types:1:0" xmlns:inventory.ProvisioningControllerService.dataTypes.pm="urn:com:ericsson:schema:xml:oss:core:project-management:data-types:1:0" xmlns:inventory.ProvisioningControllerService.v2="http://www.telcordia.com/fullfillment/platform/dto/v2" xmlns:inventory.ProvisioningControllerService.dataTypes.common="urn:com:ericsson:schema:xml:granite:sdk:common:data-types:1:0" xsi:type="inventory.ProvisioningControllerService.dataTypes.command:cancel_el">
+      <request xsi:type="inventory.ProvisioningControllerService.dataTypes.corend:pcCancelRequest">
+        <projectKey>
+          <keyValue>260655</keyValue>
+        </projectKey>
+      </request>
+    </inventory.ProvisioningControllerService.dataTypes.command:cancel>
+  </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,8 @@
+1,CFS_IP_ACCESS_WBA_VDSL,ExistingCopperLine,5
+1,CFS_IP_ACCESS_WBA_VDSL,AvailableCopperLine,8
+2,CFS_IP_ACCESS_WBA_VDSL,AvailableCopperLine,23
+2,CFS_IP_ACCESS_WBA_VDSL,ExistingCopperLine,23
+6,CFS_IP_ACCESS_WBA_FTTH,AvailableFiberLine,5
+6,CFS_IP_ACCESS_WBA_FTTH,ExistingFiberLine,8
+11,CFS_IP_ACCESS_WBA_FTTH,AvailableFiberLine,14
+11,CFS_IP_ACCESS_WBA_FTTH,ExistingFiberLine,14

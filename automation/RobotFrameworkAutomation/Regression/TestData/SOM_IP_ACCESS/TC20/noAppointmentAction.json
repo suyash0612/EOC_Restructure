@@ -1,0 +1,9 @@
+{
+	"actionName":"noAppointment",
+	"data":{
+		"reasonCode":"1405",
+		"reasonDescription":"Order not clean / missing information",
+		"domain":"EOC",
+		"note":""
+	}
+}

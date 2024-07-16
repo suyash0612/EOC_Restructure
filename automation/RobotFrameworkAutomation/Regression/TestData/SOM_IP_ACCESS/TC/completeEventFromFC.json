@@ -1,0 +1,241 @@
+{
+    "resourceType": "order",
+    "eventType": "ServiceOrderStateChangeNotification",
+    "eventId": "2002",
+    "eventDescription": "Order Completed",
+    "eventTime": "2022-07-21T13:50:53.427Z",
+    "event": {
+        "serviceOrder": {
+            "id": "DynamicVariable.orderId",
+            "href": "https://eoc.int.itservices.lan:443/eoc/serviceOrderingManagement/v1/serviceOrder/DynamicVariable.orderId",
+            "externalId": "DynamicVariable.orderId",
+            "description": "Service order for IP Access",
+            "state": "Completed",
+            "note": [
+                {
+                    "text": "All delivery notes are available here: https://fs-agile.oss.t-mobile.nl/notes/DynamicVariable.orderId",
+                    "author": "eoc",
+                    "date": "Thu Jul 21 15:50:52 CEST 2022"
+                }
+            ],
+            "orderItem": [
+                {
+                    "id": "1",
+                    "state": "CONFIGURATION.COMPLETED",
+                    "service": {
+                        "id": "279785271",
+                        "serviceSpecification": {
+                            "id": "279784898",
+                            "href": "https://eoc.int.itservices.lan:443/eoc/serviceOrderingManagement/v1/serviceOrder/DynamicVariable.orderId/serviceOrderingOrderItem/279784898",
+                            "baseType": "ServiceSpecification"
+                        },
+                        "serviceCharacteristic": [
+                            {
+                                "name": "installationType",
+                                "value": "Engineer"
+                            },
+                            {
+                                "name": "activeOperator",
+                                "value": "KPN-WBA"
+                            },
+                            {
+                                "name": "deliveredNLType",
+                                "value": "1"
+                            },
+                            {
+                                "name": "eaiServiceType",
+                                "value": "ipaccess:IPAccessService"
+                            },
+                            {
+                                "name": "localAccessType",
+                                "value": "WBA_VDSL"
+                            },
+                            {
+                                "name": "providerCommentCode"
+                            },
+                            {
+                                "name": "providerCommentDesc"
+                            },
+                            {
+                                "name": "sla",
+                                "value": "Standard"
+                            },
+                            {
+                                "name": "wbaServiceGroupId",
+                                "value": "SG-20006077"
+                            },
+                            {
+                                "name": "actualLineDeliveryDate",
+                                "value": "2022-08-08T21:59:59.000Z"
+                            },
+                            {
+                                "name": "bandwidthTooLow",
+                                "value": "false"
+                            },
+                            {
+                                "name": "eaiObjectId",
+                                "value": "IPACCESS6395"
+                            },
+                            {
+                                "name": "eaiProjectKey",
+                                "value": "105422"
+                            },
+                            {
+                                "name": "minimumBandwidthDown",
+                                "value": "70000"
+                            },
+                            {
+                                "name": "minimumBandwidthUp",
+                                "value": "18000"
+                            },
+                            {
+                                "name": "plannedLineDeliveryDate",
+                                "value": "2022-08-05T21:59:59.000Z"
+                            },
+                            {
+                                "name": "promisedBandwidthDown",
+                                "value": "70000"
+                            },
+                            {
+                                "name": "promisedBandwidthUp",
+                                "value": "18000"
+                            },
+                            {
+                                "name": "providerErrorCode",
+                                "value": "0"
+                            },
+                            {
+                                "name": "providerErrorDesc",
+                                "value": "Operation Successful"
+                            },
+                            {
+                                "name": "serviceBandwidthDown",
+                                "value": "70000"
+                            },
+                            {
+                                "name": "serviceBandwidthUp",
+                                "value": "18000"
+                            },
+                            {
+                                "name": "shapingBandwidthDown",
+                                "value": "70000"
+                            },
+                            {
+                                "name": "shapingBandwidthUp",
+                                "value": "18000"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "2",
+                    "state": "DESIGN.COMPLETED",
+                    "service": {
+                        "id": "279785276",
+                        "serviceSpecification": {
+                            "id": "279784951",
+                            "href": "https://eoc.int.itservices.lan:443/eoc/serviceOrderingManagement/v1/serviceOrder/DynamicVariable.orderId/serviceOrderingOrderItem/279784951",
+                            "baseType": "ServiceSpecification"
+                        },
+                        "serviceCharacteristic": [
+                            {
+                                "name": "eaiServiceType",
+                                "value": "ipaccess:Internet"
+                            },
+                            {
+                                "name": "eaiObjectId",
+                                "value": "SRV3363"
+                            },
+                            {
+                                "name": "eaiProjectKey",
+                                "value": "105423"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "3",
+                    "state": "STARTED",
+                    "service": {
+                        "id": "279785280",
+                        "serviceSpecification": {
+                            "id": "279784967",
+                            "href": "https://eoc.int.itservices.lan:443/eoc/serviceOrderingManagement/v1/serviceOrder/DynamicVariable.orderId/serviceOrderingOrderItem/279784967",
+                            "baseType": "ServiceSpecification"
+                        },
+                        "serviceCharacteristic": [
+                            {
+                                "name": "eaiServiceType",
+                                "value": "ipaccess:CgwEquipment"
+                            },
+                            {
+                                "name": "eaiObjectId",
+                                "value": "10000704-CGW-58"
+                            },
+                            {
+                                "name": "eaiProjectKey",
+                                "value": "105420"
+                            },
+                            {
+                                "name": "ned",
+                                "value": "CGW01_Comtrend_WAP-5951u"
+                            },
+                            {
+                                "name": "nei",
+                                "value": "90.172.184.38"
+                            },
+                            {
+                                "name": "model",
+                                "value": "WAP-5951u"
+                            },
+                            {
+                                "name": "vendor",
+                                "value": "Comtrend"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "4",
+                    "state": "DESIGN.COMPLETED",
+                    "service": {
+                        "id": "279785284",
+                        "serviceSpecification": {
+                            "id": "279784975",
+                            "href": "https://eoc.int.itservices.lan:443/eoc/serviceOrderingManagement/v1/serviceOrder/DynamicVariable.orderId/serviceOrderingOrderItem/279784975",
+                            "baseType": "ServiceSpecification"
+                        },
+                        "serviceCharacteristic": [
+                            {
+                                "name": "eaiServiceType",
+                                "value": "ipaccess:NtuEquipment"
+                            },
+                            {
+                                "name": "eaiObjectId",
+                                "value": "10000704-NTU-56"
+                            },
+                            {
+                                "name": "eaiProjectKey",
+                                "value": "105421"
+                            },
+                            {
+                                "name": "model",
+                                "value": "VMG4005"
+                            },
+                            {
+                                "name": "vendor",
+                                "value": "Zyxel"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "relatedParty": [
+                {
+                    "id": "C_1658245693341",
+                    "role": "Customer"
+                }
+            ]
+        }
+    }
+}

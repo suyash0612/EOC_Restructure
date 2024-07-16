@@ -1,0 +1,57 @@
+{
+    "requestId": "46699133523763304696262443235032hh7mm55vv55",
+    "externalId": "40372993",
+    "description": "Service order for IP Access",
+    "relatedParty": [
+      {
+        "id": "C_19052022112501",
+        "role": "Customer",
+        "name": "Wesley B V"
+      },
+      {
+        "role": "Requester",
+        "id": "BSS-Simulator",
+        "name": "BSS Netcracker"
+      }
+    ],
+    "serviceOrderItem": [
+      {
+        "id": "5",
+        "action": "Add",
+        "service": {
+          "serviceRelationship": [ { "relationshipType": "reliesOn", "service": { "id": "45" } } ],
+           "relatedParty": [
+            {
+                "@type":"ContactParty",
+                "role":"SiteContact",
+                "id":"C_12345678",
+                "firstName":"IP_ACCESS_RobotFrameworkTC72",
+                "lastName":"Automation",
+                "mobileNumber":"0611459399",
+                "phoneNumber":"0201201201",
+                "alternatePhoneNumber":"0201201202",
+                "email":"RobotFrameworkTC72@tele2.com"
+            }
+          ],
+          "place": [
+            {
+                "@type":"GeographicAddress",
+                "role":"InstallationAddress",
+                "id":"DynamicVariable.PostCode-DynamicVariable.HouseNumber",
+                "alias":"Tele2 Premises Diemen",
+                "street":"Jan van Galenstraat",
+                "houseNumber":"DynamicVariable.HouseNumber",
+                "houseNumberExtension":"",
+                "postcode":"DynamicVariable.PostCode",
+                "city":"Haarlem",
+                "country":"Netherlands"
+            }
+          ],
+          "serviceSpecification": {
+            "name": "CFS_IP_ACCESS_MOBILE_BACKUP"
+          }
+        }
+      }
+    ]
+  }
+  

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<disconnectlineoc>  
+	<messageheader>    
+		<originator>BUBN</originator>    
+		<recipient>VTEL</recipient>    
+		<messagetype>DISCON_LINE_OC</messagetype>    
+		<messageversion>42</messageversion>    
+		<timestamp>20200106025451</timestamp>  
+	</messageheader>  
+	<messagebody>    
+		<generalinfo>      
+			<order-id>P1912301159969271</order-id>      
+			<order-id-wso>DynamicVariable.wsoId</order-id-wso>      
+			<orderreceivedatetime>20191230115901</orderreceivedatetime>      
+			<eapid>EAP/6249003</eapid>      
+			<service-group>SG-20003453</service-group>    
+		</generalinfo>    
+		<orderinfo>      
+			<order-type>Disconnect Access</order-type>    
+		</orderinfo>    
+		<planninginfo>      
+			<actual-tcd>20201209</actual-tcd>      
+			<actual-ocd>20201209</actual-ocd>    
+		</planninginfo>    
+		<accesselements>      
+			<access-instance-id>AI-20078658/1</access-instance-id>    
+		</accesselements>    
+		<serviceinfo>
+			<serviceelement>
+				<service-instance-id>SI-20007213</service-instance-id>
+				<service-type-id>8419</service-type-id>
+				<service-class>E2E</service-class>
+				<e2einfo>
+					<transport-instance-id>TI-VTEL/4</transport-instance-id>
+					<eap-vlan-id>32</eap-vlan-id>
+					<wap-area>WA-VTEL/82</wap-area>
+					<wap-vlan-id>2489</wap-vlan-id>
+					<customer-connection-tag>DynamicVariable.serviceCustomerConnectionTag</customer-connection-tag>
+				</e2einfo>
+			</serviceelement>
+		</serviceinfo>      
+		<errorinfo>      
+			<errorcode>0</errorcode>      
+			<comment/>      
+			<order-note/>    
+		</errorinfo>  
+	</messagebody>
+</disconnectlineoc>

@@ -1,0 +1,9 @@
+{
+	"actionName":"noAppointment",
+	"data":{
+		"reasonCode":"1402",
+		"reasonDescription":"Site contact person not present",
+		"domain":"EOC",
+		"note":""
+	}
+}

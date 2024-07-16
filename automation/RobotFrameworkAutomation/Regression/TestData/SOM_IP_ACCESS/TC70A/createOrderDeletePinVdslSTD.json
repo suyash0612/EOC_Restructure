@@ -1,0 +1,26 @@
+{
+	"requestId": "DynamicVariable.RequestID",
+	"externalId": "EXT_ID_IPA_DynamicVariable.tcName",
+	"description": "Delete Service order for IP Access VDSL",
+	"relatedParty": [
+		{
+			"id": "CustomerTC70A",
+			"role": "Customer",
+			"name": "IP Access Robot Framework TC70A"
+		},
+		{
+			"id": "BSS-Simulator",
+			"role": "Requester",
+			"name": "BSS Simulator"
+		}
+	],
+	"orderItem": [
+        {
+			"id": "5",
+			"action": "Delete",
+			"service": {
+				"id": "DynamicVariable.srIdPIN"
+			}
+		}
+	]
+}

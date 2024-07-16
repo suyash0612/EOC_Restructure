@@ -1,0 +1,9 @@
+{
+	"actionName":"noAppointment",
+	"data":{
+		"reasonCode":"1403",
+		"reasonDescription":"KPN connection delivered to the wrong address",
+		"domain":"EOC",
+		"note":""
+	}
+}

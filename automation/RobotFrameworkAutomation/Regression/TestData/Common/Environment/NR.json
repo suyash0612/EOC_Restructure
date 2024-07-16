@@ -1,0 +1,13 @@
+{
+	"integration": {
+		"host": "https://nr-rom-staging.itservices.lan",
+		"auth": "ZW9jLWludDpGY1ZHQkhncUpKZDdleTdS"
+	},
+	"acceptance": {
+		"host": "https://nr-rom-staging.itservices.lan",
+		"auth": "ZW9jLXVhdDpjVjJXYVdOWTJkeFljcTNQ"
+	},
+	"api": {
+		"resourceOrder": "resourceOrder"
+	}
+}

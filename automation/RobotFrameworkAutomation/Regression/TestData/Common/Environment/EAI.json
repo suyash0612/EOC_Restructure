@@ -1,0 +1,21 @@
+{
+	"integration": {
+		"host": "https://eai.int.itservices.lan:443",
+		"auth": "ZW9jLWFwaXVzZXI6RW9jIUAyMyQ=",
+		"databaseHost": "nlui-osseaidb01",
+		"databaseName": "install"
+	},
+	"acceptance": {
+		"host": "https://eai.uat.itservices.lan:443",
+		"auth": "ZW9jLWFwaXVzZXI6RW9jIUAyMyQ=",
+		"databaseHost": "UAT180",
+		"databaseName": "install"
+	},
+	"api": {
+		"ProvisioningService": "/oss-core-ws/ond-adv/ProvisioningControllerService?wsdl",
+		"ProjectService": "/oss-core-ws/ocp/ProjectService?wsdl",
+		"ProvisioningRequestService":"/oss-core-ws/ond/ProvisioningRequestService?wsdl",
+		"CacheClear":"/oss-core-ws/core/CacheService?wsdl",
+		"GetSimDetails": "/oss-core-ws/rest/mob/pairedsim?fs=attrs,dynAttrs&status=assigned&type=pSIM"
+	}
+}
