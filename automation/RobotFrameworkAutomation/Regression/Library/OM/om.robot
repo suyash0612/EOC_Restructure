@@ -116,9 +116,17 @@ Wait Until KPN Order Change Line Starts
 Get WSO Id
     [Arguments]    ${orderId}
     [Documentation]    Returns WSO Id generated when calling KPN New Line
-    sleep  10
-    ${queryResults}    Query    SELECT wsoid FROM WBA_ROUTETABLE WHERE orderId=${orderId}
-    [Return]    ${queryResults[0]}[0]
+    ${elapsed_time}    Set Variable    0
+    ${TIMEOUT}    Set Variable    120
+    ${INTERVAL}    Set Variable    5
+    WHILE    ${elapsed_time} < ${TIMEOUT}
+        ${queryResults}    Query    SELECT wsoid FROM WBA_ROUTETABLE WHERE orderId=${orderId}
+        Run Keyword If    len(${queryResults}) > 0   Exit For Loop
+        Sleep    ${INTERVAL}
+        ${elapsed_time}    Evaluate    ${elapsed_time} + ${INTERVAL}
+    END
+    Run Keyword If    len(${queryResults}) == 0    Fail    No WSO Id found within 2 minute
+    [Return]    ${queryResults[0][0]}
 
 Wait Until Order Fails
     [Arguments]    ${orderId}
@@ -278,15 +286,15 @@ Validate GPON Attributes
 
 Get Ongoing task using orderId
     [Arguments]    ${orderId}
-    sleep    5
     Create Session    OM Get Order    ${EOC_HOST}
     ${header}    Create Dictionary    Content-Type=application/json    authorization=Basic ${EOC_API_AUTH}
     #get task from order
-    ${taskResponse}    Get Request    OM Get Order    /eoc/workList/v2/workOrderItem/?sort=-requestedDeliveryDate&orderId=${orderId}&mode=taskManagerAdvanced&state=onGoing    headers=${header}
+    ${taskResponse}    GET On Session    OM Get Order    url=/eoc/workList/v2/workOrderItem/?sort=-requestedDeliveryDate&orderId=${orderId}&mode=taskManagerAdvanced&state=onGoing    headers=${header}
     ${taskLen}    get length    ${taskResponse.json()}
     log to console    ee:${taskLen}
     Run keyword if    "${taskLen}" == "0"    Get Ongoing task using orderId    ${orderId}
-    Run keyword if    "${taskLen}" != "0"    Get Task ID    ${orderId}    ${taskResponse.json()}
+    # Run keyword if    "${taskLen}" != "0"    Get Task ID    ${orderId}    ${taskResponse.json()}
+    [Return]  ${taskResponse.json()[0]['id']}
 
 Get Task ID
     [Arguments]    ${orderId}    ${taskResponse}

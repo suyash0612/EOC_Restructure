@@ -1,0 +1,112 @@
+{
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "OS-202407250810",
+    "description": "Operator Connect",
+    "requestedCompletionDate": "2024-09-25T15:05:02Z",
+    "relatedParty": [
+      {
+        "id": "DynamicVariable.relatedParty.customerid",
+        "role": "Customer",
+        "name": "DynamicVariable.relatedParty.customerName-DynamicVariable.tcName"
+      },
+      {
+        "id": "DynamicVariable.relatedParty.requestorid",
+        "role": "Requester",
+        "name": "DynamicVariable.relatedParty.requestorid"
+      }
+    ],
+    "orderItem": [
+      {
+        "id": 0,
+        "action": "Add",
+        "service": {
+          "id": null,
+          "serviceSpecification": {
+            "name": "CFS_OC_GROUP"
+          },
+          "serviceCharacteristic": [
+            {
+              "name": "tenantId",
+              "valueType": "String",
+              "value": "DynamicVariable.tenantId"
+            },
+            {
+              "name": "name",
+              "valueType": "String",
+              "value": "DynamicVariable.name"
+            },
+            {
+              "name": "bscsCustomerId",
+              "valueType": "String",
+              "value": "DynamicVariable.bscsCustomerId"
+            }
+          ],
+          "serviceRelationship": null
+        }
+      },
+      {
+        "id": 1,
+        "action": "Add",
+        "service": {
+          "id": null,
+          "serviceSpecification": {
+            "name": "CFS_OC_STOCK"
+          },
+          "serviceCharacteristic": [
+            {
+              "name": "ocNumberLimit",
+              "valueType": "Number",
+              "value": "DynamicVariable.ocNumberLimit"
+            },
+            {
+              "name": "ocMobileNumberLimit",
+              "valueType": "Number",
+              "value": "DynamicVariable.ocMobileNumberLimit"
+            }
+          ],
+          "serviceRelationship": null
+        },
+        "orderItemRelationship": [
+          {
+            "type": "ReliesOn",
+            "id": "0"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "action": "Add",
+        "service": {
+          "id": null,
+          "serviceSpecification": {
+            "name": "CFS_NUMBER_RANGE"
+          },
+          "serviceCharacteristic": [
+            {
+              "name": "listId",
+              "valueType": "String",
+              "value": "DynamicVariable.listId"
+            },
+            {
+              "name": "startNumber",
+              "valueType": "String",
+              "value": "DynamicVariable.startNumber"
+            },
+            {
+              "name": "size",
+              "valueType": "String",
+              "value": "DynamicVariable.resourceCapacityDemandAmount"
+            }
+          ],
+          "serviceRelationship": null
+        },
+        "orderItemRelationship": [
+          {
+            "type": "ReliesOn",
+            "id": "0"
+          }
+        ]
+      }
+    ]
+  }
+  

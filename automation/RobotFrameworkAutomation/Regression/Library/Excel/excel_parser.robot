@@ -3,11 +3,21 @@ Documentation     Parse Excel Data
 Library           String
 Library           excel_parser.py
 Library           DatabaseLibrary
-Library    XML
+Library           XML
 
 
 
 *** Keywords ***
+Parse Excel Data And Return Data Dictionary
+    [Arguments]    ${excelFile}  ${sheet_name}  ${tcName}
+    [Documentation]    Return Data From the TC data sheet
+    ...  tcName : TestCase Name
+    ...  excelFile : excelFile Name
+    ...  payload : payload Name
+    ...  sheet_name : If no sheet is provided, it is assumed that the payload and sheet name are same
+    &{excel_data}   Parse Excel File    ${excelFile}    ${sheet_name}     ${tcName}
+    [Return]    &{excel_data}
+
 # Get Data From Excel to replace
 Parse Excel Data
     [Arguments]    ${excelFile}  ${sheet_name}  ${tcName}  ${payload}  ${srId}=${EMPTY}
@@ -17,7 +27,7 @@ Parse Excel Data
     ...  payload : payload Name
     ...  sheet_name : If no sheet is provided, it is assumed that the payload and sheet name are same
     ...  srId : Use this argument to place a update order on exisiting order where srId is used
-    &{excel_data}   Parse Excel File    ${excelFile}    ${sheet_name}     ${tcName}
+    &{excel_data}   Parse Excel Data And Return Data Dictionary    ${excelFile}    ${sheet_name}     ${tcName}
     FOR    ${key}    IN    @{excel_data.keys()}
         ${DynamicVariable}=    Set Variable    ${excel_data}[${key}][0][0]
         ${DynamicVariableValue}=    Set Variable    ${excel_data}[${key}][0][1]
@@ -42,3 +52,7 @@ Store SRId Into Excel For TestCases
         ${SRId}  Evaluate  int(${SRId})
         Update Excel Value    ${excelFile}    ${sheet_name}  ${test_case_input}  ${service}  ${SRId}
     END
+
+Add Or Update New Field Into Excel Data
+    [Arguments]    ${excelFile}  ${sheet_name}  ${test_case_input}  ${fieldName}  ${fieldValue}
+    Add New Field And Value To Excel    ${excelFile}  ${sheet_name}  ${test_case_input}  ${fieldName}  ${fieldValue}

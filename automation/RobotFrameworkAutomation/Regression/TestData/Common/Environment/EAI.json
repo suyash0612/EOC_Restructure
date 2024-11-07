@@ -1,6 +1,6 @@
 {
 	"integration": {
-		"host": "https://eai.int.itservices.lan:443",
+		"host": "https://eai.int.itservices.lan",
 		"auth": "ZW9jLWFwaXVzZXI6RW9jIUAyMyQ=",
 		"databaseHost": "nlui-osseaidb01",
 		"databaseName": "install"
@@ -16,6 +16,8 @@
 		"ProjectService": "/oss-core-ws/ocp/ProjectService?wsdl",
 		"ProvisioningRequestService":"/oss-core-ws/ond/ProvisioningRequestService?wsdl",
 		"CacheClear":"/oss-core-ws/core/CacheService?wsdl",
-		"GetSimDetails": "/oss-core-ws/rest/mob/pairedsim?fs=attrs,dynAttrs&status=assigned&type=pSIM"
+		"GetSimDetails": "/oss-core-ws/rest/mob/sim?fs=attrs,dynAttrs&fs.mobileProfile.profileService=attrs,dynAttrs&fs.mobileProfile=attrs,dynAttrs",
+		"FixedNumbersAvailabilityCheck":"/oss-core-ws/rest/tmfnm-adv/ResourcePoolManagement/availabilityCheck",
+		"FixedNumbersReservation":"/oss-core-ws/rest/tmfnm-adv/ResourcePoolManagement/reservation"
 	}
 }

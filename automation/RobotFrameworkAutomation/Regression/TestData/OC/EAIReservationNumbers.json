@@ -1,0 +1,59 @@
+{
+  "type": "tmfnm-adv/resourcepoolmanagement/reservation",
+  "acceptNumberResvRequest": {
+    "type": "tmfnm/acceptnumberresvrequest",
+    "relatedParty": {
+      "type": "tmfnm/relatedparty",
+      "party": [
+        {
+          "type": "tmfnm/party",
+          "partyId": "DynamicVariable.CustomerId",
+          "partyRole": "Customer"
+        },
+        {
+          "type": "tmfnm/party",
+          "partyId": "Salesforce",
+          "partyRole": "Requestor"
+        }
+      ]
+    },
+    "channelRef": {
+      "type": "tmfnm/channelref",
+      "_id": "C_27111115",
+      "name": "OrderId"
+    },
+    "productOffering": {
+      "type": "tmfnm/productoffering",
+      "productOffer": [
+        {
+          "type": "tmfnm/productoffer",
+          "_id": "NumberRange",
+          "name": "ReservationList"
+        }
+      ]
+    },
+    "resourceReservationItem": {
+      "type": "tmfnm/resourcecapacitydemand",
+      "applicableTimePeriod": {
+        "type": "tmfnm/applicabletimeperiod",
+        "from": "",
+        "to": "2020-12-31"
+      },
+      "resourcePool": {
+        "type": "tmfnm/resourcepool",
+        "_id": "TN-FIXED-GEN",
+        "resources": [
+          {
+            "type": "tmfnm/resource",
+            "value": "DynamicVariable.numberRange"
+          }
+        ]
+      }
+    },
+    "requestedPeriod": {
+      "type": "tmfnm/applicabletimeperiod",
+      "from": "",
+      "to": "2020-12-31"
+    }
+  }
+}
