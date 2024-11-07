@@ -72,9 +72,9 @@ Perform Standard Task Action
     [Documentation]    Performs a manual task action based on the given request.
     ...    API to be used when EOC just needs the action to be performed.
     #generate payload
-    ${request}    Convert String to JSON    {"actionName":"${action}"}
+    ${request}   Convert String To Json  {"actionName":"${action}"}
     Create Session    eoc session    ${EOC_HOST}
     # Send Request towards EOC
     ${header}    Create Dictionary    Content-Type=application/json    authorization=Basic ${EOC_API_AUTH}
-    ${response}    Post On Session    eoc session    ${WK_API_OPER_DICT}[INVOKE_STANDARD_TASK_ACTION]/${taskId}/invokeAction    headers=${header}    data=${request}
+    ${response}    Post Request  eoc session  ${WK_API_OPER_DICT}[INVOKE_STANDARD_TASK_ACTION]/${taskId}/invokeAction    headers=${header}    data=${request}  
     Request Should Be Successful    ${response}

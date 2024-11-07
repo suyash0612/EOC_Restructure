@@ -1,0 +1,106 @@
+{
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "OS-DynamicVariable.RequestID",
+    "description": "Operator Connect",
+    "requestedCompletionDate": "2024-09-25T15:05:02Z",
+    "relatedParty": [
+      {
+        "id": "DynamicVariable.relatedParty.customerid",
+        "role": "Customer",
+        "name": "DynamicVariable.relatedParty.customerName-DynamicVariable.tcName"
+      },
+      {
+        "id": "DynamicVariable.relatedParty.requestorid",
+        "role": "Requester",
+        "name": "DynamicVariable.relatedParty.requestorid"
+      }
+    ],
+    "orderItem": [
+      {
+        "id": 1,
+        "action": "Add",
+        "service": {
+          "id": null,
+          "serviceSpecification": {
+            "name": "CFS_PORT_IN"
+          },
+          "serviceCharacteristic": [
+            {
+              "name": "recipientServiceProvider",
+              "valueType": "String",
+              "value": "Solcon (2)"
+            },
+            {
+              "name": "zipCode",
+              "valueType": "String",
+              "value": "1112 XS"
+            },
+            {
+              "name": "startNumber",
+              "valueType": "String",
+              "value": "DynamicVariable.portInStartnumber"
+            },
+            {
+              "name": "size",
+              "valueType": "String",
+              "value": "DynamicVariable.fixedNumberRangeSize"
+            },
+            {
+              "name": "city",
+              "valueType": "String",
+              "value": "DIEMEN"
+            },
+            {
+              "name": "street",
+              "valueType": "String",
+              "value": "Wisselwerking"
+            },
+            {
+              "name": "companyName",
+              "valueType": "String",
+              "value": "Tele2 Hosted Voice NL"
+            },
+            {
+              "name": "houseNumber",
+              "valueType": "String",
+              "value": "58"
+            }
+          ],
+          "serviceRelationship": null
+        }
+      },
+      {
+        "id": 2,
+        "action": "Add",
+        "service": {
+          "id": null,
+          "serviceSpecification": {
+            "name": "CFS_NUMBER_RANGE"
+          },
+          "serviceCharacteristic": [
+            {
+              "name": "startNumber",
+              "valueType": "Number",
+              "value": "DynamicVariable.portInStartnumber"
+            },
+            {
+              "name": "size",
+              "valueType": "Number",
+              "value": "DynamicVariable.fixedNumberRangeSize"
+            }
+          ],
+          "serviceRelationship": {
+            "type": "ReliesOn",
+            "id": "DynamicVariable.CFS_OC_GROUP_srId"
+          }
+        },
+        "orderItemRelationship": [
+          {
+            "type": "ReliesOn",
+            "id": "1"
+          }
+        ]
+      }
+    ]
+  }
+  

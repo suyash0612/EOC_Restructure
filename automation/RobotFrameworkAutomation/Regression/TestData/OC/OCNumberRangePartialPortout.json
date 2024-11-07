@@ -1,0 +1,45 @@
+{
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "OS-DynamicVariable.RequestID",
+    "description": "Operator Connect",
+    "requestedCompletionDate": "2024-09-25T15:05:02Z",
+    "relatedParty": [
+      {
+        "id": "DynamicVariable.relatedParty.customerid",
+        "role": "Customer",
+        "name": "DynamicVariable.relatedParty.customerName-DynamicVariable.tcName"
+      },
+      {
+        "id": "DynamicVariable.relatedParty.requestorid",
+        "role": "Requester",
+        "name": "DynamicVariable.relatedParty.requestorid"
+      }
+    ],
+    "orderItem": [
+        {
+            "id": 1,
+            "action": "Modify",
+            "service": {
+              "id": "DynamicVariable.CFS_NUMBER_RANGE_srId",
+              "serviceSpecification": {
+                "name": "CFS_NUMBER_RANGE"
+              },
+              "serviceCharacteristic": [
+                {
+                  "name": "portOutStartNumber",
+                  "valueType": "String",
+                  "value": "DynamicVariable.portOutStartNumber"
+                },
+                {
+                  "name": "portOutSize",
+                  "valueType": "String",
+                  "value": "DynamicVariable.portOutSize"
+                }
+              ],
+              "serviceRelationship": null
+            }
+          }
+      
+    ]
+  }
+  

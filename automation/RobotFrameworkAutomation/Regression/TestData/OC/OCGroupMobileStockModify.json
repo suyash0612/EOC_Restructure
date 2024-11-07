@@ -1,0 +1,39 @@
+{
+    "requestId": "DynamicVariable.RequestID",
+    "externalId": "DynamicVariable.RequestID",
+    "description": "Operator Connect",
+    "requestedCompletionDate": "2024-09-25T15:05:02Z",
+    "relatedParty": [
+      {
+        "id": "DynamicVariable.relatedParty.customerid",
+        "role": "Customer",
+        "name": "DynamicVariable.relatedParty.customerName-DynamicVariable.tcName"
+      },
+      {
+        "id": "DynamicVariable.relatedParty.requestorid",
+        "role": "Requester",
+        "name": "DynamicVariable.relatedParty.requestorid"
+      }
+    ],
+    "orderItem": [
+        {
+            "id": 0,
+            "action": "Modify",
+            "service": {
+              "id": "DynamicVariable.CFS_OC_STOCK_srId",
+              "serviceSpecification": {
+                "name": "CFS_OC_STOCK"
+              },
+              "serviceCharacteristic": [
+                {
+                  "name": "ocMobileNumberLimit",
+                  "valueType": "Number",
+                  "value": "DynamicVariable.ocMobileNumberLimit"
+                }
+              ],
+              "serviceRelationship": null
+            }
+          }
+    ]
+  }
+  

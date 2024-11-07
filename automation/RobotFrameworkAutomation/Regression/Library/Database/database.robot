@@ -28,7 +28,7 @@ Setup Environment
     ${eocDetailsJson}    evaluate    json.loads('''${eocDetails}''')    json
     ${eocEnv}    Set Variable    ${eocDetailsJson}[${ENV}]
 
-    ${eaiDetails}   Get File    ${WORKSPACE}/TestData/Common/Environment/EAI.json
+    ${eaiDetails}   Get File    ${CURDIR}/../../TestData/Common/Environment/EAI.json
     ${eaiDetailsJson}    evaluate    json.loads('''${eaiDetails}''')    json
     ${eaiEnv}    Set Variable    ${eaiDetailsJson}[${ENV}]
     # Get GoBoss details
