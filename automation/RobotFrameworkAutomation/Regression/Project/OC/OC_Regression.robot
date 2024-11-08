@@ -371,6 +371,18 @@ TC09
     Validate Generic Event Notification  ${orderId}  1001
     Validate Generic Event Notification  ${orderId}  1002
 
+    # Validate TAI State
+    ${response}  Get TAI History  ${orderId}
+    Check TAI State  response=${response}  name=waitForOCNumberServices  completedWithOperation=notRequired
+    Check TAI State  response=${response}  name=addDelNumbersinVoicePlatform  completedWithOperation=notRequired
+    Check TAI State  response=${response}  name=milestoneFulfilmentComplete  completedWithOperation=complete
+    Check TAI State  response=${response}  name=designAssignBulkTransitionNumbers  completedWithOperation=notRequired
+    Check TAI State  response=${response}  name=milestoneDesignComplete  completedWithOperation=complete
+    Check TAI State  response=${response}  name=omOrderFulfillmentBegin  completedWithOperation=complete
+    Check TAI State  response=${response}  name=orderEnrichment  completedWithOperation=complete
+    Check TAI State  response=${response}  name=decomposeAndOrchestrateServicesWorkflows  completedWithOperation=complete
+    Check TAI State  response=${response}  name=omServiceOrderFulfillmentCompletedEvent  completedWithOperation=complete
+
 TC10
     [Documentation]  Port out whole range(complete) for Fixed Numbers: PORTOUT CFS_NUMBER_RANGE For the PORT-IN Numbers
     [Tags]  OC_BATCH_RUN 
