@@ -48,7 +48,8 @@ Get Fixed Numbers From EAI Resource Pool Management
     [Documentation]    Get Available Fixed Numbers From EAI Resource Pool
     [Arguments]  ${fixedNumberRangeSize}  ${CustomerId}  ${channelRefId} 
     # ${request}    Get File    ${WORKSPACE}/TestData/OC/EAIResourcePoolManagementAvailabilty.json
-    ${request}    Load Json From File    ${WORKSPACE}/TestData/Common/FixedNumberRange/EAIResourcePoolManagementAvailabilty.json
+    ${request}    Load Json From File    ${WORKSPACE}/TestData/OC/EAIResourcePoolManagementAvailabilty.json
+    # ${request}    Load Json From File    ${WORKSPACE}/TestData/Common/FixedNumberRange/EAIResourcePoolManagementAvailabilty.json
     ${request}    Update Value To Json    ${request}    $..resourceCapacityDemandAmount    ${fixedNumberRangeSize}  
     ${request}  Convert Json To String    ${request}
     Log  ${fixedNumberRangeSize}
@@ -374,13 +375,6 @@ Get The Reservation List Id For Number
     ${response}    GET  url=${EAI_HOST}/oss-core-ws/rest/onm/number?name=${startNumber}&Type=TN&subType=FIXED&svcCategory=GEN&fs.listnms=attrs  headers=${header}  verify=${False}
     ${reservationListId}  JSON Get Value From JsonString  ${response.json()}    $..listId
     [Return]  ${reservationListId[0]}
-
-Complete Task 
-    [Arguments]  ${orderId}
-    ${taskId}  Get Ongoing task using orderId  ${orderId}
-    Start Task Execution    ${taskId}
-    Perform Standard Task Action    ${taskId}   action=complete
-
 Reject Task 
     [Arguments]  ${orderId}
     ${taskId}  Get Ongoing task using orderId  ${orderId}
