@@ -81,7 +81,7 @@ Get Fixed Numbers From EAI Resource Pool Management
 Reserve The Numbers in EAI Resource Pool Management
     [Documentation]    Reserve the Available Fixed Numbers
     [Arguments]    ${availabiltyRequest}  ${channelRefId}  ${CustomerId}
-    ${request}    Get File    ${WORKSPACE}/TestData/Common/FixedNumberRange/EAIReservationNumbers.json
+    ${request}    Get File    ${WORKSPACE}/TestData/OC/EAIReservationNumbers.json
     ${request}    Replace String    ${request}    DynamicVariable.DateTimeField    ${channelRefId}
     ${request}    Replace String    ${request}    DynamicVariable.CustomerId    ${CustomerId}
     ${numberRange}  Get Value From Json    ${availabiltyRequest}    $..appliedResourceCapacity.resource[*].value  fail_on_empty=${True}
