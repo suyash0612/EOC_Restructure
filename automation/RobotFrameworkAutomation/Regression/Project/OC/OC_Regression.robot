@@ -204,6 +204,7 @@ TC04
     Store The Service Registry Id For Service  ${orderId}  CFS_NUMBER_RANGE  excelFile=${excelFile}   sheet_name=${dataSheet}  tcName=TC09
     Store The Service Registry Id For Service  ${orderId}  CFS_NUMBER_RANGE  excelFile=${excelFile}   sheet_name=${dataSheet}  tcName=TC10
 
+    # Fetch and Update the reservation List Id from EAI for the port in number range
     ${reservationListId}  Get The Reservation List Id For Number  ${startNumber}
     Add Or Update New Field Into Excel Data  excelFile=${WORKSPACE}/TestData/OC/${excelFile}.xlsx  sheet_name=${dataSheet}  test_case_input=${TEST_NAME}  fieldName=reservationListId  fieldValue=${reservationListId}
     Add Or Update New Field Into Excel Data  excelFile=${WORKSPACE}/TestData/OC/${excelFile}.xlsx  sheet_name=${dataSheet}  test_case_input=TC09  fieldName=reservationListId  fieldValue=${reservationListId}
@@ -418,17 +419,35 @@ TC10
     Check TAI State  response=${response}  name=milestoneDeleteComplete  completedWithOperation=complete
     Check TAI State  response=${response}  name=milestoneDeleteComplete  completedWithOperation=complete
 
-TCXX
-    Set Test Variable    ${orderId}  80177130261599
-    Complete Task  ${orderId}
+TC11
+    [Documentation]  Delete Group, Number Range, Stock for Fixed Numbers 
+    [Tags]  OC_BATCH_RUN 
+    Initialize TC Data Variables    excelFile=${excelFile}   sheet_name=${dataSheet}  tcName=${TEST_NAME}
+    ${som_request}  TC OC Setup  excelFile=${excelFile}   sheet_name=${dataSheet}  tcName=${TEST_NAME}  payload=OCCascadeDelete  fixedNumberRangeSize=1
+    # Set Test Variable    ${startNumber}  ${portInStartnumber}
+    ${orderId}    Create Order    ${som_request}
+    Wait Until Order Completes    ${orderId}
+    # Validate the items in the basket
+    Validate OC  ${orderId}  cfsItem=CFS_OC_GROUP  expectedAction=Delete
+    Validate OC  ${orderId}  cfsItem=CFS_OC_STOCK  expectedAction=Delete
+    Validate OC  ${orderId}  cfsItem=CFS_NUMBER_RANGE  expectedAction=Delete
+    # Check Msg Logs
+    Validate Generic Event Notification  ${orderId}  1001
+    Validate Generic Event Notification  ${orderId}  1002
 
-TCXY
-    ${msglogListId}  Evaluate  [15171033078, 15171033077]
-    Log  ${msglogListId}
-    ${val}  Evaluate  type(${msglogListId[0]})
-    ${msglogListId}  Evaluate  sorted(${msglogListId})
-    Log  ${msglogListId}
-    
-TCZZ
-    Reject Task  200126015133714
+    # Validate TAI State
+    ${response}  Get TAI History  ${orderId}
+    Check TAI State  response=${response}  name=omServiceOrderFulfillmentCompletedEvent  completedWithOperation=complete
+    Check TAI State  response=${response}  name=orderEnrichment  completedWithOperation=complete
+    Check TAI State  response=${response}  name=omOrderFulfillmentBegin  completedWithOperation=complete
+    Check TAI State  response=${response}  name=decomposeAndOrchestrateServicesWorkflows  completedWithOperation=complete
+    Check TAI State  response=${response}  name=designAssignBulkTransitionNumbers  completedWithOperation=notRequired
+    Check TAI State  response=${response}  name=milestoneDesignComplete  completedWithOperation=complete
+    Check TAI State  response=${response}  name=addDelNumbersinVoicePlatform  completedWithOperation=notRequired
+    Check TAI State  response=${response}  name=milestoneFulfilmentComplete  completedWithOperation=complete
+    Check TAI State  response=${response}  name=waitForGroupServicers  completedWithOperation=complete
+    Check TAI State  response=${response}  name=delNumberRangeServiceOnVoicePlatform  completedWithOperation=notRequired
+    Check TAI State  response=${response}  name=disconnectNumberRangeOnEAI  completedWithOperation=complete
+    Check TAI State  response=${response}  name=milestoneDeleteComplete  completedWithOperation=complete
+    Check TAI State  response=${response}  name=milestoneDeleteComplete  completedWithOperation=complete
 
