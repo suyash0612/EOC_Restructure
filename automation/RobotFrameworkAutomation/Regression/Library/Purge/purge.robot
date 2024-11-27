@@ -5,6 +5,7 @@ Library           Collections
 Library           String
 Resource          ../Data Order/dataorder.robot
 Resource          ../Database/database.robot
+Resource          ../External Systems/externalsystems.robot
 Library           RequestsLibrary
 
 *** Keywords ***
